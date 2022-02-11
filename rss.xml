@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>3n3a's Blog Blog</title>
+        <link>https://blog.3n3a.ch/</link>
+        <description>3n3a's Blog Blog</description>
+        <lastBuildDate>Wed, 11 Aug 2021 16:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Hackernews Client with Hackerfeed API]]></title>
+            <link>https://blog.3n3a.ch/hackernews_client</link>
+            <guid>/hackernews_client</guid>
+            <pubDate>Wed, 11 Aug 2021 16:00:00 GMT</pubDate>
+            <description><![CDATA[My idea was to develop a hackernews client, I know so many others exist already. But I wanted to try for myself.]]></description>
+            <content:encoded><![CDATA[<p>My idea was to develop a hackernews client, I know so many others exist already. But I wanted to try for myself.</p><p>I started out by finding an API that would allow me to lean back and relax. This API is called <a href="https://hackerfeed.dev" target="_blank" rel="noopener noreferrer">hackerfeed.dev</a>, I believe to have found it on hackernews.</p><p>Afterwards I moved onto designing the Frontend, for this I wanted to use pre-made bootstrap components. For that I used MDBootstrap, a Framework that combines Material, from Google and Bootstrap into one capitalistic creation.</p><p><img src="https://ik.imagekit.io/njhey0rxzni/code_snippets/A1AF7D3E-67E1-4D94-BE20-8D9FEF870C1F_KG4KPathGn.png?updatedAt=1628745888583&amp;tr=w-1104,h-736,fo-auto"></p><p><em>A code snippet from the index.html. The classes correspond to MDBootstrap</em></p><h2 class="anchor anchorWithStickyNavbar_mojV" id="final-result">Final Result<a class="hash-link" href="#final-result" title="Direct link to heading">​</a></h2><p>The result can be seen <a href="https://gh.3n3a.ch/hnfee_mdb/" target="_blank" rel="noopener noreferrer">here</a>. It doesn’t work aswell as I wanted it to. But upon preloding the API response times got a little bit better. </p><h2 class="anchor anchorWithStickyNavbar_mojV" id="reflection">Reflection<a class="hash-link" href="#reflection" title="Direct link to heading">​</a></h2><p>For another project I would want to better know about fetching API responses from load or background fetching. Maybe even with a service worker.</p><p>Also I wouldn‘t use MDBootstrap again, first of all, because it’s not free and secondarily because I like Tailwind and co more :).</p>]]></content:encoded>
+            <category>hackernews</category>
+            <category>api</category>
+        </item>
+        <item>
+            <title><![CDATA[Guide: Install Windows on a Mac]]></title>
+            <link>https://blog.3n3a.ch/guide_installation_windows_on_mac</link>
+            <guid>/guide_installation_windows_on_mac</guid>
+            <pubDate>Sun, 18 Apr 2021 15:12:16 GMT</pubDate>
+            <description><![CDATA[This guide covers the installation of Windows 10 on an Apple Mac. For demonstration purposes an iMac (Mid-2011) was utilised.]]></description>
+            <content:encoded><![CDATA[<p><em>This guide covers the installation of Windows 10 on an Apple Mac. For demonstration purposes an <a href="https://everymac.com/systems/apple/imac/specs/imac-core-i5-2.7-21-inch-aluminum-mid-2011-thunderbolt-specs.html" target="_blank" rel="noopener noreferrer">iMac (Mid-2011)</a> was utilised.</em></p><p><em>This guide aims to show that Windows 10 can be installed without the use of Bootcamp at all. But as far as I know you still need a Mac for certain Steps.</em></p><blockquote><p>If you own a newer Mac it might be worthwile using the Official Boot Camp Installation &amp; Setup Guide. But also if you need further guidance, which you can't find on <a href="https://discussions.apple.com/community/windows_software/boot_camp" target="_blank" rel="noopener noreferrer">Apple's Forums</a>.</p></blockquote><h2 class="anchor anchorWithStickyNavbar_mojV" id="format-usb">1. Step: <strong>Format the USB-Drive</strong><a class="hash-link" href="#format-usb" title="Direct link to heading">​</a></h2><p>The USB-Drive needs to be formatted as <em>ExFAT</em>, because <em>FAT32</em> only supports file sizes of up to 4GB and Windows 10 has some files which exceed that limitation. <sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup></p><p>Boot into MacOS (if you are in a different partition on your mac, you can hold down the <code>ALT</code> key on boot and then select <em>MacOS</em>.) and open <em>Disk Utility</em>. Then insert the USB-Drive and <em>Erase</em> it as <em>ExFAT</em> (as can be seen in the image below). </p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ab1973af-734d-4a3c-9a1d-6acbf16c725d/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210418%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20210418T112331Z&amp;X-Amz-Expires=86400&amp;X-Amz-Signature=95260cd5d1ee75c282f5f40c406803d85701827c5249ad9dbde6c81122395137&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt="Screenshot Disk Utility App's Erase Screen" title="Screenshot: DiskUtility.app's Erase Screen"></p><h2 class="anchor anchorWithStickyNavbar_mojV" id="download-iso">2. Step: <strong>Download Windows 10 ISO</strong><a class="hash-link" href="#download-iso" title="Direct link to heading">​</a></h2><p>Head over to the <a href="https://www.microsoft.com/en-us/software-download/windows10ISO" target="_blank" rel="noopener noreferrer">Microsoft Download Website</a> preferably on a Non-Windows Computer and Download the Windows 10 ISO for your language. <sup id="fnref-3"><a href="#fn-3" class="footnote-ref">3</a></sup></p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1e8b4053-413f-4e10-8e43-fb6649743a2f/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210418%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20210418T113633Z&amp;X-Amz-Expires=86400&amp;X-Amz-Signature=a86319128c18b91e3149b450fdf5a7498e4b16f70409529770649185d540b769&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt="Screenshot: The Microsoft ISO Download Website" title="Screenshot: The Microsoft ISO Download Website"></p><h2 class="anchor anchorWithStickyNavbar_mojV" id="3-step-download-bootcamp-software">3. Step: <strong>Download Bootcamp Software</strong><a class="hash-link" href="#3-step-download-bootcamp-software" title="Direct link to heading">​</a></h2><p>The Bootcamp Support Package for my specific iMac Model was downloaded by using <a href="https://github.com/timsutton/brigadier" target="_blank" rel="noopener noreferrer">brigadier</a> <sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup>. The following are the commands I ran in Terminal:</p><div class="codeBlockContainer_I0IT language-bash theme-code-block"><div class="codeBlockContent_wNvx bash"><pre tabindex="0" class="prism-code language-bash codeBlock_jd64 thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_mRuA"><span class="token-line" style="color:#393A34"><span class="token function" style="color:#d73a49">git</span><span class="token plain"> clone https://github.com/timsutton/brigadier</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">python2 brigadier -m YOUR_MAC_MODEL_ID</span><br></span></code></pre><button type="button" aria-label="Copy code to clipboard" class="copyButton_wuS7 clean-btn">Copy</button></div></div><p>Your specific Mac Model Id can be found on your Mac's casing, or on <a href="https://everymac.com/systems/apple/index-apple-specs-applespec.html" target="_blank" rel="noopener noreferrer">everymac.com (Desktop)</a> / <a href="https://everymac.com/app/" target="_blank" rel="noopener noreferrer">(Mobile)</a>. In my case the ID of the iMac 2011 was <code>iMac12,1</code>.</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="4-step-copy-windows-10-to-usb-drive">4. Step: <strong>Copy Windows 10 to USB-Drive</strong><a class="hash-link" href="#4-step-copy-windows-10-to-usb-drive" title="Direct link to heading">​</a></h2><p>Once you have <a href="#download-iso">downloaded the Windows 10 ISO</a> you should open it with <em>DiskImageMounter</em>, do this by <em>right-clicking</em> it, then go to <em>Open With</em> and finally select <em>DiskImageMounter</em>. This will open a new Window with its contents, now you're going to drag all of those files onto the USB-Drive, <a href="#format-usb">which you formatted before</a>.</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ca0de37e-ce14-4634-92d4-7354d80cae05/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210418%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20210418T114533Z&amp;X-Amz-Expires=86400&amp;X-Amz-Signature=366534ad74a516c480c3863ba11b10202ef684d3a3012b53f78e57f1d4d5e854&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt="Screenshot: Finder Windows of Windows 10 Disk Image's Contents" title="Screenshot: Finder Windows of Windows 10 Disk Image's Contents"></p><h2 class="anchor anchorWithStickyNavbar_mojV" id="5-step-copy-bootcamp-onto-usb-drive">5. Step: <strong>Copy Bootcamp onto USB-Drive</strong><a class="hash-link" href="#5-step-copy-bootcamp-onto-usb-drive" title="Direct link to heading">​</a></h2><p>Go to the folder named <em>brigadier</em> and open the folder within it, called something along the lines of <em>BootCamp-041-84868</em>. Inside of this folder you can find the <em>WindowsSupport.dmg</em>. Mount this Disk Image by <em>right-clicking</em> it, then go to <em>Open With</em> and then selecting <em>DiskImageMounter</em>. </p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1dca9160-44d7-4a1b-8eec-a17385f11f05/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210418%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20210418T115845Z&amp;X-Amz-Expires=86400&amp;X-Amz-Signature=e405a8d0cee1c0f3b1df61c11106317c6b19821971cab0e774c3e88fb77ba05c&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt="Screenshot: Finder window of Brigadier Download" title="Screenshot: Finder window of Brigadier Download"></p><p>A new Finder window opens with the Boot Camp Drivers, these are needed for Windows to interface with the Mac's hardware. Next you're going to copy all the files in the window <em>Boot Camp</em> to your USB-Drive, by dragging them onto the USB-Drive Icon. </p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7605f16a-5e15-4049-bb14-129065efddf2/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210418%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20210418T115847Z&amp;X-Amz-Expires=86400&amp;X-Amz-Signature=bc359ba9c87c41ea3f0aac3a08049121c1614ac62b50e1fbfdec21b565d95947&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt="Screenshot: Finder window with Boot Camp Drivers" title="Screenshot: Finder window with Boot Camp Drivers"></p><p>Finder will ask you if you want to keep both copies of files, the best option here is to select <em>Apply to All</em> and <em>Replace</em>.</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="6-step-installing-windows">6. Step: <strong>Installing Windows</strong><a class="hash-link" href="#6-step-installing-windows" title="Direct link to heading">​</a></h2><p>First thing after finishing the above steps, is to eject the USB-Drive and shutdown your system. Then boot the system while holding down the <code>ALT</code>-Key. As can be seen below, you select the Windows Icon and press <code>Enter</code></p><div class="footnotes"><hr><ol><li id="fn-1"><a href="https://gist.github.com/levibostian/1307b4f329562245900cb449bbcfdefa" target="_blank" rel="noopener noreferrer">Install windows on a mac</a>: Used as a general guide for the installation <a href="#fnref-1" class="footnote-backref">↩</a></li><li id="fn-3"><a href="https://www.microsoft.com/en-us/software-download/windows10ISO" target="_blank" rel="noopener noreferrer">Windows ISO Download (Microsoft)</a>: Downloaded the Windows 10 ISO from here. Only works on Non-Windows Devices, e.g. a Mac.<a href="#fnref-3" class="footnote-backref">↩</a></li><li id="fn-2"><a href="https://github.com/timsutton/brigadier" target="_blank" rel="noopener noreferrer">brigadier: Fetch and install Boot Camp ESDs with ease.</a>: Used to download the correct bootcamp drivers from Apple's Servers.<a href="#fnref-2" class="footnote-backref">↩</a></li></ol></div>]]></content:encoded>
+            <category>guide</category>
+            <category>macos</category>
+            <category>windows</category>
+        </item>
+        <item>
+            <title><![CDATA[Interview Kol Deda, Autor]]></title>
+            <link>https://blog.3n3a.ch/interview_kol_deda</link>
+            <guid>/interview_kol_deda</guid>
+            <pubDate>Tue, 13 Apr 2021 11:50:16 GMT</pubDate>
+            <description><![CDATA[Mein Name ist Enea Krähenbühl und heute habe ich Kol Deda als Gast bei mir.]]></description>
+            <content:encoded><![CDATA[<p>Mein Name ist Enea Krähenbühl und heute habe ich Kol Deda als Gast bei mir.</p><p>Er ist ein neu-aufkommender Autor und hat vor kurzer Zeit seinen ersten Gedichtband Kalte Reise veröffentlicht.</p><p>Dieser Band verkaufte sich nach kurzer Zeit schon sehr gut, weshalb ich mal mit dem Autor reden wollte, um herauszufinden, wer eigentlich hinter diesem Werk steckt.</p><p><img src="https://koldeda.ch/images/kaltereise.jpg" alt="Kalte Reise Buch"></p><hr><audio class="react-audio-player" controls="" preload="metadata" src="/audio/koldeda_interview.mp3" title="/audio/koldeda_interview.mp3"><p>Your browser does not support the <code>audio</code> element.</p></audio><p><em>Guten Tag Herr Deda, wie geht es Ihnen so?</em></p><p><strong>Also mir geht es im Moment ganz gut, und Ihnen?</strong></p><p><em>Mir geht’s auch gut. Also fangen wir mal an: Erzählen Sie mal über sich selbst.</em></p><p><strong>Ich wurde am 14. Juni 2002 in Luzern geboren. Derzeit besuche ich die Kantonsschule Alpenquai in Luzern und natürlich hoffe ich, dass ich viele Leute mit meiner kreativen Arbeit erreichen kann.</strong></p><p><em>Wann haben Sie angefangen Gedichte zu schreiben? Und wieso haben Sie angefangen?</em></p><p><strong>Ich habe im Frühjahr 2020 angefangen Gedichte zu schreiben, mit dem Ziel, eines Tages einen Gedichtband zu veröffentlichen. Ich hatte eigentlich schon immer ein Interesse an der Literatur und wollte, seitdem ich sehr jung war, mal ein eigenes literarisches Werk publizieren. Dieser Gedanke liess mich einfach nie los. Zuerst wollte ich einen Roman verfassen aber ich habe kurz darauf realisiert, dass mir dieser Schreibstil einfach nicht gut genug passt. So kam ich zur Lyrik, denn in Gedichten braucht es keine Einleitung, es braucht keinen 200-seitigen Fliesstext um etwas zu erzählen; man kann in der Lyrik schon in der ersten Zeile direkt in das Erzählte/Beschriebene eintauchen.</strong></p><p><em>Wie waren denn ihre Anfänge so, als Lyriker?</em></p><p><strong>Also ich denke, dass es falsch wäre über meine "Anfänge" so rückblickend zu erzählen - denn derzeit bin ich noch immer am Anfang.</strong></p><p><strong>Aber um Ihre Frage zu beantworten: Anfangs muss man viel Lyrik lesen; das ist einfach so. Man muss sich über - ich sag’s mal so - die Szene schlaumachen. Wer waren berühmte Lyriker? Was schrieben sie? Wie haben sie geschrieben? Und - ganz wichtig - wie sieht die Lyriklandschaft denn eigentlich heute aus?</strong></p><p><strong>Lyrik zu lesen hat nicht nur einen informativen Zweck, sondern es ist auch eine Quelle, aus der man Inspiration holt.</strong></p><p><em>Hatten Sie anfangs Probleme mit dem Eintauchen in dieser Welt?</em></p><p><strong>Ja, natürlich; anfangs gibt es immer Schwierigkeiten. Aber man kommt schon schnell hinein.</strong></p><p><strong>Man muss einfach eine Leidenschaft für so etwas haben.</strong></p><p><em>Erzählen Sie mir mal über Ihr Werk Kalte Reise.</em></p><p><strong>Die Idee dahinter war, eine Geschichte durch den Modus der Lyrik zu erzählen. Eine dreiteilige Geschichte, in der es darum geht, wie eine idyllische Welt zusammen mit der Form der Gedichte zerfällt.</strong></p><p><strong>Im ersten Teil ist die Sprache noch "ganz": Die Gedichte klingen harmonisch und befinden sich in einer recht strengen Form. Ab dem zweiten Teil fängt aber die Form an zu zerbrechen: Die Reime/Assonanzen fehlen, der Rhythmus verschwindet sowie weiteres. Somit verläuft der Zerfall der Form gleichzeitig mit dem Zerfall der beschriebenen Welt und auch gleichzeitig mit dem Zerfall des mentalen Zustandes des lyrischen Ichs.</strong></p><p><em>Was hat Sie dazu inspiriert?</em></p><p><strong>Ein Triptychon von Hieronymus Bosch: Der Heuwagen. Sie sollten mal einen Blick darauf werfen, dann wissen Sie was ich meine.</strong></p><p><em>Sie haben oben erwähnt, dass das "Lyriklesen" eine Quelle der Inspiration sei. Welche Lyriker*innen haben Sie inspiriert?</em></p><p><strong>Also ganz klar Goethe und Heinrich Heine. Ich hab während dem Schreiben viel "alte" Lyrik gelesen. Von Heine habe ich sogar ein Gedicht ein wenig bearbeitet und direkt in meinem Band aufgenommen. Aber auch Steffen Popp und Jan Wagner, zwei kontemporäre Lyriker. Dessen Werke sind sehr inspirierend.</strong></p><p><em>Ich danke Kol Deda für seine aufschlussreichen Antworten. Sein Debütwerk Kalte Reise hat er eigenständig veröffentlicht und man kann es auf seiner Homepage kaufen:</em></p><p><a href="https://koldeda.ch" target="_blank" rel="noopener noreferrer">koldeda.ch</a></p>]]></content:encoded>
+            <category>interview</category>
+            <category>poetry</category>
+        </item>
+        <item>
+            <title><![CDATA[Honeypot Cowrie Maturaarbeit]]></title>
+            <link>https://blog.3n3a.ch/honeypot-cowrie-maturaarbeit</link>
+            <guid>honeypot-cowrie-maturaarbeit</guid>
+            <pubDate>Fri, 19 Mar 2021 09:25:38 GMT</pubDate>
+            <description><![CDATA[Die Idee zum Einstieg ins Themenfeld von Cyber-Sicherheit bekam ich beim]]></description>
+            <content:encoded><![CDATA[<p>Die Idee zum Einstieg ins Themenfeld von Cyber-Sicherheit bekam ich beim
+lesen eines Tweets, welcher dazu führte, dass ich im Internet nachlas,
+was denn Cyber-Sicherheit überhaupt ist, und welche verschiedenen
+Themenfelder existieren. Ein Artikel in der Neuen Zürcher Zeitung,
+geschrieben von Mäder <sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>, hat mich überzeugt, in meiner Arbeit den Fokus
+definitiv auf die Cyber-Sicherheit zu legen. Der Artikel handelt von
+Hacker-Angriffen auf Spitäler. Angesichts zunehmender Home-Office-Arbeit
+wegen der Pandemie interessiert mich die Frage, unter welchen
+Sicherheitsbestimmungen zuhause beruflich gearbeitet wird. Dies bedeutet
+für einen Sicherheitsverantwortlichen bei einer Organisation die
+Bereitstellung eines VPN- oder RDP-Zugangs. Denn die Arbeitnehmer müssen
+naturgemäss dauernd Zugriff auf firmeneigene Netzwerke haben.</p><p>Die vorliegende Arbeit handelt von Cyber-Sicherheit, im Spezifischen von
+Honeypots. Hierzu wird der Honeypot Cowrie auf dem EC2 Cloud Server von
+AWS installiert, um für insgesamt einen Monat Daten zu sammeln. Diese
+gesammelten Daten werden mit Hilfe einer selbst programmierten Webapp
+analysiert und visualisiert. Die Analyse dient der Beantwortung der
+Leitfrage. Die Kombination von Honeypot und Webapp führt zu einem
+Produkt, welches auf einem Raspberry-Pi läuft. Das Ziel des Produktes
+ist es, Laien, welche ein Interesse an den Methoden eines Hackers haben,
+ein Sprungbrett in die Cyber-Sicherheit zu verschaffen.</p><p>Die Analyse der vom Honeypot gesammelten Daten sowie auch die
+dazugehörigen Visualisierungen sind Gegenstand der vorliegenden Arbeit
+mit folgender Leitfrage:</p><ul><li>"Ist ein Honeypot mit Webapp eine effektive Methode zum präventiven
+Schutz eines Heimnetzwerkes?"</li></ul><h1>Nachforschungen in Literatur</h1><h2 class="anchor anchorWithStickyNavbar_mojV" id="cybersecurity-übersicht">Cybersecurity Übersicht<a class="hash-link" href="#cybersecurity-übersicht" title="Direct link to heading">​</a></h2><p>Der Begriff Cyber-Sicherheit umfasst eine Reihe von verschiedenen
+Aspekten wie die Informationssicherheit, Applikationssicherheit,
+Netzwerksicherheit und die Operationssicherheit.</p><p>Im Jahr 2019 wurden laut Risk Based Security <sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup> über 15.1 Milliarden persönliche
+Datensets aufgrund von Datenlecks exponiert. Nach dem Rekordjahr 2019 ist die
+Sicherheit von Netzwerken noch wichtiger als zuvor. Es wird vermutet,
+dass im Jahr 2020 die Anzahl der Cyber-Attacken weiter zunehmen werden.</p><p>Für Unternehmen sind Honeypots ein wichtiger Bestandteil der
+Identifizierung von potenziellen Angreifern. Denn Unternehmen können mit
+Daten, die sie von einem Honeypot kriegen, eine Struktur auflegen,
+welche das Vorgehen eines Angreifers aufzeigt. Diese Struktur mit dem
+Namen "Cyber Kill Chain", wird von Lockheed Martin <sup id="fnref-3"><a href="#fn-3" class="footnote-ref">3</a></sup> entwickelt, ein globales
+Unternehmen für Sicherheit und Luft- und Raumfahrt.</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="netzwerksicherheit">Netzwerksicherheit<a class="hash-link" href="#netzwerksicherheit" title="Direct link to heading">​</a></h3><p>Die Netzwerksicherheit ist nach Kaspersky <sup id="fnref-4"><a href="#fn-4" class="footnote-ref">4</a></sup> eine Methode zur Absicherung eines
+Netzwerks. Der Honeypot gehört zum Umfeld der Netzwerksicherheit, da er
+bei der Erkennung eines Hackers und dessen Methoden eine Hilfe ist. Ein
+Honeypot selber schützt nicht. Er ist ein Mittel, das Informationen
+liefert. Mit Hilfe dieser Informationen wird ein Netzwerk danach
+abgesichert.</p><h1>Begriffserklärungen</h1><h2 class="anchor anchorWithStickyNavbar_mojV" id="cyber-kill-chain">Cyber Kill Chain<a class="hash-link" href="#cyber-kill-chain" title="Direct link to heading">​</a></h2><p>Um die Abfolge eines Cyber-Angriffes zu beschreiben, hat Lockheed Martin
+den Cyber Kill Chain Lockheed Martin <sup id="fnref-5"><a href="#fn-5" class="footnote-ref">5</a></sup> entwickelt. Dieser soll eine
+Grundlage darstellen, um einen Cyber-Angriff mit mehreren Etappen zu
+beschreiben. Nach Schmitz <sup id="fnref-6"><a href="#fn-6" class="footnote-ref">6</a></sup> sind die Etappen, welche ein Angreifer
+typischerweise durchläuft, die folgenden:</p><ul><li><p><strong>Identifizierung des Zieles:</strong> Der Angreifer sucht öffentlich über
+das Ziel verfügbare Informationen wie E-Mail-Adressen, Informationen
+über das Unternehmen und dessen IT-Systeme.</p></li><li><p><strong>Präparation des Angriffs:</strong> Die passenden Angriffswerkzeuge werden
+zusammengestellt. Oft bestehen diese aus einem
+Exploit und
+einer Malware.</p></li><li><p><strong>Beginn des Angriffs:</strong> Der Angriff wird gestartet und das
+Malware-Exploit-Paket wird je nach Angreifbarkeit mit Hilfe eines
+USB-Sticks, eines Social-Media-Posts oder einer infizierten Website
+ausgeliefert.</p></li><li><p><strong>Zugriff auf Opfer:</strong> Eine Schwachstelle wird ausgenutzt um Zugriff
+auf den Computer eines Opfers zu bekommen. Diese Schwachstelle kann
+in einer Software existieren. Eine andere Schwachstelle kann auch
+ein Mitarbeiter sein. Der mit Hilfe von
+Social Engineering dazu bewogen worden ist, eine
+böswillige Software auszuführen.</p></li><li><p><strong>Brückenkopf wird errichtet:</strong> Der Angreifer
+installiert eine Backdoor und versteckt
+Malware im
+Computersystem des Opfers.</p></li><li><p><strong>Command and Control (C2):</strong> Um die
+Malware aus
+der Ferne zu bedienen, hält der Angreifer Ausschau nach möglichen
+Kommunikationskanälen. Diese werden geöffnet und anschliessend wird
+das System gesteuert. Welches des Öfteren unter Verwendung von
+abläuft.</p></li><li><p><strong>Ziel der Mission erreichen:</strong> Ein Angreifer hat etwas vor. Es
+existiert ein Ziel. Dieses Ziel will nun nach den obgenannten
+Schritten erreicht werden. Ein Ziel kann es sein, das Netzwerk
+auszulöschen oder vertrauliche Daten darin zu finden.</p></li></ul><h2 class="anchor anchorWithStickyNavbar_mojV" id="ssh-secure-shell-protocol">SSH (Secure Shell Protocol)<a class="hash-link" href="#ssh-secure-shell-protocol" title="Direct link to heading">​</a></h2><p>SSH oder auch Secure Shell Server ist ein Netzwerkprotokoll, mit dem man
+auf die Konsole, das Text In/Output Feld, womit der Computer gesteuert
+wird, zugreift. Die Funktion des SSH-Protokolls oder eher des
+"Tochterprotokolls" namens Secure-File-Transfer-Protokoll, besteht
+darin, Dateien über ein Netzwerk zu transferieren, sei dies lokal oder
+über das World-Wide-Web.</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="honeypot">Honeypot<a class="hash-link" href="#honeypot" title="Direct link to heading">​</a></h2><p>Ein Honeypot - oder in Deutsch Honigtopf - ist eine Falle, die man in
+der Computersicherheitsindustrie benutzt, um Angreifer mit einem System
+abzulenken das nur so scheint als wäre es "the real deal". Dieses
+System wird oftmals in einer virtuellen Umgebung aufgesetzt, denn falls
+ein Angreifer etwas anrichtet, was zum "Tode" des Systems führen
+würde, kann man dieses einfach auf einen Punkt vor dem Zwischenfall
+zurücksetzen. Der Name Honeypot hat seinen Ursprung in der Strategie,
+Bären mit Hilfe von Honigtöpfen als Köder abzulenken und zu
+beschäftigen, so dass sie ihren eigentlichen Plan vergessen.
+<sup id="fnref-7"><a href="#fn-7" class="footnote-ref">7</a></sup></p><p>In der Welt der Computersicherheit gibt es verschiedene Honeypots. Auf
+der einen Seite gibt es Server-seitige Honeypots. Das sind Honeypots,
+welche auf dem Server als Falle existieren und jegliche Angriffe
+aufzeichnen. Auf der anderen Seite gibt es Client-seitige Honeypots. Das
+sind Honeypots, die sich als Benutzer wie z.B. in der Form eines
+Browsers ausgeben und Daten über Websites sammeln, welche den Benutzer
+anzugreifen versuchen. <sup id="fnref-8"><a href="#fn-8" class="footnote-ref">8</a></sup></p><p>Nach <code>ionos.de</code> <sup id="fnref-8"><a href="#fn-8" class="footnote-ref">8</a></sup> gibt es zwei
+verschiedene Weisen, Honeypots zu implementieren. Zum einen passiert
+dies auf einem physischen Rechner, zum anderen in virtueller Form wie
+z.B. mit (Quick Emulator).</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="stufen-von-interaktivität">Stufen von Interaktivität<a class="hash-link" href="#stufen-von-interaktivität" title="Direct link to heading">​</a></h2><p>Einfacheitshalber werden nachfolgend nur die Server Honeypots
+beschrieben, da diese in der vorliegenden Arbeit ein Thema bilden
+werden. Auf die Client-seitigen Honeypots wird nicht eingegangen.</p><ul><li><p><strong>Low-Interaction-Honeypots\
+</strong> Diese Art von Honeypots wird gemäss Hoopes <sup id="fnref-9"><a href="#fn-9" class="footnote-ref">9</a></sup> oft benutzt, um Virusproben zu sammeln. Dieser Honeypot
+ist einer, welcher der Sammlung von Viren dient, zugleich auch
+andere Verwendungendungsfälle hat. Die praktische Implementierung
+eines Low-Interaction-Honeypots ist einfach im Vergleich zu der von
+anderen Honeypots mit höheren Interaktivitäts-Graden.</p></li><li><p><strong>Mid-Interaction-Honeypots\
+</strong> Medium-Interaction-Honeypots stellen nach
+Lance <sup id="fnref-10"><a href="#fn-10" class="footnote-ref">10</a></sup> mehr Möglichkeiten in
+Form von Interaktivität, zur Verfügung, als
+Low-Interaction-Honeypots. Diese Art von Honeypots werden
+üblicherweise in Unternehmensumgebungen implementiert. Die
+Medium-Interaction-Form kommt dann in Frage, wenn ein Honeypot
+relativ kostengünstig sein soll. Das bedeutet konkret, dass ein
+solcher Honeypot fortlaufend betrieben wird.</p></li><li><p><strong>High-Interaction-Honeypots\
+</strong> Ein High-Interaction-Honeypot ist im Grunde ein echtes System,
+das sowohl in einer virtuellen als auch in einer physischen Umgebung
+ausgesetzt wird. Hier besteht die hohe Gefahr, dass ein Angriff auf
+wichtige Systeme erfolgt wie z.B. die Website eines Unternehmens.
+Diese Gefahr besteht, wenn das angreifbare System nicht gut genug
+abgeschirmt sind vom Rest. D.h. es ist unerlässlich, solche Systeme
+vom Rest einer Organisation oder eines privaten Netzwerks
+abzuschirmen, wie auf <code>ionos.de</code> <sup id="fnref-8"><a href="#fn-8" class="footnote-ref">8</a></sup>
+zu entnehmen ist.</p></li></ul><h2 class="anchor anchorWithStickyNavbar_mojV" id="verschiedene-honeypots">Verschiedene Honeypots<a class="hash-link" href="#verschiedene-honeypots" title="Direct link to heading">​</a></h2><h3 class="anchor anchorWithStickyNavbar_mojV" id="glastopf">Glastopf<a class="hash-link" href="#glastopf" title="Direct link to heading">​</a></h3><p>Glastopf ist ein Low-Interaction-Honeypot, der Webapp-Schwachstellen
+nachahmt. Dieser Honeypot ist einer der bekanntesten
+Web-Applikations-Honeypots. Was diesen Honeypot speziell macht, ist sein
+Ansatz. Denn er ist anders als jener von gleichwertigen Produkten.
+Glastopf emuliert eine Website. Diese schaut aus der Perspektive eines
+Angreifers wie eine Website aus, die angreifbar ist. Hinter den Kulissen
+aber wird die Website mit den Sicherheitslücken von allen vorherigen,
+von Hackern angegriffenen, Websites ausgestattet.</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="mailoney">Mailoney<a class="hash-link" href="#mailoney" title="Direct link to heading">​</a></h3><p>Mailoney von awhitehatter <sup id="fnref-11"><a href="#fn-11" class="footnote-ref">11</a></sup> ist ein Low-Interaction-SMTP-Honeypot,
+geschrieben in Python. Der Honeypot emuliert SMTP. Dabei
+handelt es sich um das Protokoll, welches benutzt wird zur Versendung
+von E-Mails. Mailoney hilft beim Identifizieren der Quelle von
+Spam-E-Mails. <sup id="fnref-11"><a href="#fn-11" class="footnote-ref">11</a></sup></p><h2 class="anchor anchorWithStickyNavbar_mojV" id="cowrie-ssh-honeypot">Cowrie SSH Honeypot<a class="hash-link" href="#cowrie-ssh-honeypot" title="Direct link to heading">​</a></h2><p>Der Cowrie Honeypot von Osterheim <sup id="fnref-12"><a href="#fn-12" class="footnote-ref">12</a></sup>, eine Fork von Kippo, ist ein
+Medium- zu High-Interaction-SSH und Telnet-Honeypot. Cowrie speichert
+sowohl Logindaten von Angreifern als auch die Befehle, welche ausgeführt
+wurden. Hochgeladene Dateien werden ebenfalls gespeichert und zur
+späteren Analyse bereitgestellt. Die High-Interaction-Funktionalität des
+Honeypots ermöglicht es dem Nutzer, die SSH-Traffic zu einem anderen
+System zu analysieren. Der Honeypot selber ist nicht vom Typ
+High-Interaction. Er kann jedoch mit Hilfe von zusätzlichen Programmen,
+wie zu solch einem Typ von Honeypot mutiert werden. Dieser Honeypot
+basiert auf der Programmiersprache Python.</p><p>Im Grunde hat der Honeypot zwei verschiedene Verwendungsmöglichkeiten:
+Eine davon ist das Emulieren von einem Server, der einen SSH-Zugang
+bereitstellt. Diese Emulation ist jedoch nicht vollständig. D.h. nicht
+ein ganzes Linux System wird emuliert, sondern nur die üblichsten
+Befehle. So hat es auch im
+"Fake"&nbsp;Dateisystem nur die Dateien, welche man üblicherweise
+auf einem Linux System findet. Die andere Verwendungsmöglichkeit von
+Cowrie ist das Weiterleiten von einer SSH-Anfrage auf ein echtes System.
+Hier zeichnet Cowrie die gleichen Daten auf wie bei der Emulation. Diese
+zweite Verwendungsmöglichkeit hat den grossen Vorteil, das echte System
+für einen Angreifer real erscheinen zu lassen, was wiederum eine höhere
+Wahrscheinlichkeit nach sich zieht, dass entweder die Person oder das
+Programm die eigenen Methoden enthüllt.</p><p>Cowrie sammelt viele Daten. Im Grunde werden von einem Angreifer
+folgende Daten abgespeichert: Der Benutzername und das Passwort, mit
+welchem versucht wurde sich einzuloggen sowie die IP-Adresse und die
+eingegebenen Befehle. Zusätzlich speichert Cowrie auch die von den
+Angreifern hochgeladenen Dateien.</p><p>Cowrie bietet viele Möglichkeiten, um die gesammelten Daten direkt in
+andere Programme einzuspeisen. Wenn an der Konfiguration nichts geändert
+wurde, dann speichert Cowrie die gesammelten Daten in "Log" Dateien.
+Diese sind in User Mode Linux () kompatiblen Format, sodass sie mit
+einem integrierten Programm wiedergegeben werden können. Andere
+Plugin, welche
+die Einspeisung der Daten in eine SQL-Datenbank oder in ein Statistik
+Programm wie z.B. Elastic Stack ermöglichen, können zusätzlich aktiviert
+werden.</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="django">Django<a class="hash-link" href="#django" title="Direct link to heading">​</a></h2><p>Django ist ein Framework, welches primär für die Programmierung
+von Webapps und APIs existiert. Dieses
+Framework
+basiert auf der Python-Programmiersprache und wurde von
+Webentwicklern für Webentwickler programmiert.</p><p>Das Framework, welches mit Django installiert wird,
+generiert sogenannte "Projekte". Diese beinhalten alle Einstellungen für
+die Webapp. Weiter generiert dieses Programm auch "Applikationen",
+welche den eigentlichen Programmcode beinhalten, der ausgeführt wird.
+Schon mit wenigen Zeilen von Code kann mit Hilfe von Django eine
+funktionelle und dynamische Webseite erstellt werden.</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="cloud-server">Cloud Server<a class="hash-link" href="#cloud-server" title="Direct link to heading">​</a></h2><p>Eine Cloud ist ein virtueller Computer, der bei einem Cloud-Provider
+gemietet wird, und auf welchem Programme installiert werden und
+anschliessend laufen. Ein Kleinunternehmen zum Beispiel mietet eine
+solche Cloud, um dort ihre Website zu hosten.</p><p>Diese Clouds haben gemäss Red Hat, Inc. <sup id="fnref-13"><a href="#fn-13" class="footnote-ref">13</a></sup> die Option von Skalierbarkeit,
+welche es ermöglicht, die Spezifikation eines Servers, z.B. bei mehr
+Anfragen auf eine Website, anzupassen. Dies dient der Bewältigung einer
+höheren Arbeitsbelastung..</p><p>Cloud-Provider sind Firmen, die Informatikinfrastruktur, wie z.B.
+öffentliche Clouds oder auch private Clouds, zur Verfügung stellen. Nach Red Hat, Inc. <sup id="fnref-13"><a href="#fn-13" class="footnote-ref">13</a></sup> sind die nachfolgend genannten Provider die bekanntesten und
+grössten Cloud-Provider: Alibaba Cloud, Amazon Web Services (AWS),
+Google Cloud, IBM Cloud und Microsoft Azure.</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="ec2-instanzen">EC2-Instanzen<a class="hash-link" href="#ec2-instanzen" title="Direct link to heading">​</a></h3><p>Auf der Cloud-Provider-Plattform gibt es die Möglichkeit eine Elastic
+Compute Cloud (EC2) zu mieten. Diese ist skalierbar, d.h. je nach
+Ausnutzung der Ressourcen kann das Abonnement so angepasst werden, dass
+nicht mehr als nötig für benutzte Ressourcen bezahlt wird. <sup id="fnref-14"><a href="#fn-14" class="footnote-ref">14</a></sup></p><h2 class="anchor anchorWithStickyNavbar_mojV" id="raspberry-pi">Raspberry Pi<a class="hash-link" href="#raspberry-pi" title="Direct link to heading">​</a></h2><p>Der Rasperry Pi der Raspberry Organisaton <sup id="fnref-15"><a href="#fn-15" class="footnote-ref">15</a></sup> ist ein Einplatinencomputer,
+welcher als einfachen Einstieg in die Welt von Linux und dem
+Programmieren entwickelt wurde. Der Computer hat alle Komponenten auf
+einer einzigen Platine. Dies sind das Grafikchipset, der Prozessor und
+der Internetanschluss. Wie Abbildung 1 zeigt ist die Grösse des
+Raspberry Pis vergleichbar mit derjenigen einer Kreditkarte.</p><p><img alt="Ein Raspberry Pi im Vergleich zu einer Kreditkarte" src="/assets/images/raspberry_pi_kreditkarte-530d88de2a233d31a9f6b4f7b96f9495.jpg" width="3523" height="2642"></p><h1>Material und Methoden</h1><h2 class="anchor anchorWithStickyNavbar_mojV" id="materialien">Materialien<a class="hash-link" href="#materialien" title="Direct link to heading">​</a></h2><p>Nachfolgend werden die verschiedenen Materialien beschrieben, welche für
+die Kollektion der Daten gebraucht werden.</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="betriebssystem-für-honeypot">Betriebssystem für Honeypot<a class="hash-link" href="#betriebssystem-für-honeypot" title="Direct link to heading">​</a></h3><p>Entwickelt wurde Cowrie für ein Linux basiertes Betriebssystem. Es kann
+jedoch auch auf anderen Betriebssystemen installiert werden. Dort ist
+die Stabilität jedoch nicht garantiert. Der Honeypot läuft für die
+Zeitspanne von 30 Tagen. Darum ist es wichtig, dass dieser mit hoher
+Wahrscheinlichkeit funktioniert. Linux ist deshalb die beste Option. Der
+Cloud Provider AWS hat verschiedene Auswahlmöglichkeiten an Linux
+Betriebssystemen. Der Entscheid fiel auf Ubuntu, da es Open Source ist
+und die Lernkurve kleiner ist als bei Amazon Linux, welches andere
+Befehle und Module mitliefert.</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="visualisierungsmodul">Visualisierungsmodul<a class="hash-link" href="#visualisierungsmodul" title="Direct link to heading">​</a></h3><p>Ausgewählt für ein Visualisierungsmodul, mit welchem die Diagramme auf
+der Webapp generiert / konstruiert werden, getestet für Verwendbarkeit
+in der Webapp, wurden vorwiegend Javascript Module, wie Chart.js oder
+D3.js. Diese haben eine grosse Lernkurve, welche zeitlich nicht
+unterstützbar ist. Plotly ist ein Pythonmodul, das Javascript Diagramme,
+mit Hilfe von Dateneingaben vom Python Code generiert.</p><p>Plotly ist ein einfach zu erlernendes Modul. Es dient zur Visualisierung
+von Daten in einer Webapp, welche in Python geschrieben wird.</p><p><img alt="Website des Visualisierungsmoduls, Plotly" src="/assets/images/plotly_website_screenshot-df16b97e7c724c0e333c9849e669707d.png" width="2290" height="1699"></p><p>Das Modul Plotly ist gut aufgebaut. Es hat nicht alle Typen von
+Diagrammen, welche für diese Arbeit gebraucht werden. Des fehlt die
+Wortwolke deshalb wird AnyChart.js für diesen Diagramm-Typ benutzt.
+Diese beiden Module wurden aufgrund ihrer einfachen Benutzung
+ausgewählt.</p><p>Es werden Daten mit Hilfe eines Honeypots gesammelt. Dieser Honeypot
+läuft auf einem Server der Amazon Web Services (AWS). Zur Auswahl stehen
+verschiedene Server Lösungen von AWS. Es gibt jedoch nur zwei Angebote,
+welche passend für diese Arbeit sind. Der eine ist ein Virtual Private
+Server (VPS) und der andere eine EC2-Instanz von Amazon. Da die
+vorliegende Arbeit ein Nullbudget hat, wurde eine EC2-Instanz
+ausgewählt. Diese läuft ein Jahr gratis auf einem Server, der mit
+anderen Benutzern geteilt wird. Auf der AWS Plattform unter EC2
+Instanzen gibt es verschiedene Pläne, welche diverse Konfigurationen zur
+Verfügung stellen. Für diese Arbeit wird eine EC2-Instanz mit dem
+«t2.micro»-Plan und dem Ubuntu Betriebssystem aufgesetzt, da dieser Plan
+im oben erwähnten Gratisjahr von AWS inbegriffen ist. <sup id="fnref-16"><a href="#fn-16" class="footnote-ref">16</a></sup></p><h2 class="anchor anchorWithStickyNavbar_mojV" id="warum-diese-materialien">Warum diese Materialien?<a class="hash-link" href="#warum-diese-materialien" title="Direct link to heading">​</a></h2><p>Im Prozess der Recherche wurde Cowrie als Honeypot ausgewählt, da dieser
+eine umfangreiche Dokumentation aufweist. Ein anderer Grund, warum
+dieser Honeypot ausgewählt wurde, ist, dass man als Neuling den Honeypot
+mit relativ wenig Aufwand installieren und aufsetzen kann.</p><p>Der Entscheid für den Cloud-Server ist auf AWS gefallen, da man für
+zwölf Monate, solange man eine valide Kreditkarte vorweist, gratis einen
+Server einrichten kann. Der Cowrie Honeypot läuft auf einer EC2 Instanz.</p><p>Ausgewählt wurde Django aufgrund der Lernkurve bei anderen
+Frameworks,
+wie z.B. Angular. Dies ist ein Webframework geschrieben in JavaScript
+und verwaltet von Google. Dazu kommt, dass Django eine Objekt
+relationale Abbildungsmethode hat, welche es ermöglicht, auf eine
+Datenbank mit Objekt orientierten Modellen zuzugreifen.</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="vorgehen">Vorgehen<a class="hash-link" href="#vorgehen" title="Direct link to heading">​</a></h2><h3 class="anchor anchorWithStickyNavbar_mojV" id="setup-von-aws">Setup von AWS<a class="hash-link" href="#setup-von-aws" title="Direct link to heading">​</a></h3><p>Sobald die EC2-Instanz aufgesetzt ist werden einige für diese Arbeit
+notwendigen Änderungen daran vorgenommen. Als erstes wird der
+«Sicherheits-Gruppen»-Panel im EC2-Panel geöffnet. Darin wird die frisch
+kreierte Sicherheitsgruppe geöffnet und die «inbound rules» werden
+bearbeitet. Wie Abbildung 4 zeigt, wird eine erste Regel für den Port
+60895 kreiert. Dieser wird von der Seite des Administrators her benutzt
+für den SSH Zugriff auf den Server. Die zweite Regel ist für den SSH
+Zugriff vom Angreifer. Wie auf der Abbildung 3 zu sehen ist, kann jeder
+auf diesen Port zugreifen. Auf den Port in der ersten Regel kann man nur
+mit einer spezifischen IP-Adresse zugreifen.</p><p><img alt="Das &amp;#39;Inbound Rules&amp;#39; Dashboard von EC2" src="/assets/images/aws_ec2_inbound_rules_screenshot-98d4d9fd8b82ba4c09fed9f87caaa9a8.png" width="1934" height="1146"></p><h3 class="anchor anchorWithStickyNavbar_mojV" id="installation-von-cowrie">Installation von Cowrie<a class="hash-link" href="#installation-von-cowrie" title="Direct link to heading">​</a></h3><p>Die Software für den Honeypot ist Open Source. Um den
+Installationsprozess des Honeypots auf dem Server zu vereinfachen, ist
+ein Skript dafür im Anhang enthalten. Dieses Skript aktualisiert die
+installierten Pakete, und es lädt die für die Installation notwendigen
+Pakete herunter. Nach der Installation der Pakete kreiert das Skript
+einen neuen Benutzer für Cowrie und ändert auch den Port für SSH. Danach
+lädt das Skript das Projektarchiv des Honeypots «Cowrie» von GitHub
+herunter und speichert dies in Cowries' Benutzerordner ab. Die
+Konfigurationsdatei wird ersetzt durch diese, welche im Anhang zu finden
+ist.</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="aufbereitung-der-gesammelten-daten">Aufbereitung der gesammelten Daten<a class="hash-link" href="#aufbereitung-der-gesammelten-daten" title="Direct link to heading">​</a></h3><p>Nach der Kollektion aller JSON-Dateien werden diese in eine SQLite
+Datenbank importiert. Auf diese Datenbank wird mit einem
+Python Skript
+zugegriffen. Dieses Skript benutzt Funktionen und Klassen von Django,
+damit der Gebrauch von nicht nötig ist. Diese Funktionen, bereitgestellt
+von Django, sind Objekt orientiert. Das bedeutet, dass eine Klasse
+geschrieben wird, die als Vorlage dient. Mit Hilfe dieser Klasse lassen
+sich Daten in die Datenbank hinzufügen, löschen und auch verändern.</p><p>Das Python
+Skript kombiniert alle JSON-Dateien zu einer einzelnen Datei. Durch den
+Gebrauch von if-else Anweisungen werden von jeder Linie nur die
+Informationen, die gebraucht werden, in die Datenbank abgespeichert.
+Spezielle Informationen erfordern spezielle Aufbereitung, z.B. muss das
+Herkunftsland der IP-Adressen bestimmt werden.</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="generierung-der-visualisierungen">Generierung der Visualisierungen<a class="hash-link" href="#generierung-der-visualisierungen" title="Direct link to heading">​</a></h3><p>Die Visualisierungen, mit Ausnahme von den Wörterwolken, werden mit
+Hilfe des Python-Moduls Plotly generiert. Wörterwolken-Visualisierungen
+werden nicht direkt mit dem Python-Skript generiert, da dies ein
+Javascript Modul ist.</p><ul><li><p><strong>Loginversuche pro Tag\
+</strong> Bei dieser Visualisierung werden von der Datenbank Informationen
+über die Anzahl Angriffe an einem gegebenen Tag eingeholt.</p></li><li><p><strong>Loginversuche sortiert nach Ländern\
+</strong> Wichtig war es hier, dass nur die 10 Länder mit den meisten
+Angriffen an das Frontend gesendet werden. Diest ist im
+Balkendiagramm in Abbildung 5 enhalten.</p></li><li><p><strong>Loginversuche ganze gemessene Zeit\
+</strong> Dies ist die einfachste Visualisierung, denn diese besteht aus
+einer Zahl. Auch hinter den Kulissen passiert nicht viel. Die
+Funktion zählt die Anzahl Login-Versuche und gibt diese zurück.</p></li><li><p><strong>Top 10 Benutzer, Passwort und Kombination\
+</strong> Die Anmeldeinformationen, welche von einem Angreifer oder dessen
+Skript benutzt wurden, werden visualisiert. Die erste der drei
+Visualisierungen zeigt in Form von einer Wörterwolke, welches die
+meist ausprobierten Benutzernamen waren. Die zweite Visualisierung
+führt zum gleichen Ergebnis wie die erste, jedoch mit dem
+Unterschied dass sie die am meist probierten Passwörter
+visualisiert. Zuletzt folgt nun die Visualisierung, welche aus einer
+Kombination der beiden ersten besteht. Das bedeutet, dass diese
+aufzeigt, welches die am meisten ausprobierte Benutzernamen- und
+Passwort-Kombination gewesen sind.</p></li></ul><h1>Ergebnisse</h1><h2 class="anchor anchorWithStickyNavbar_mojV" id="angriffe-per-zeit">Angriffe per Zeit<a class="hash-link" href="#angriffe-per-zeit" title="Direct link to heading">​</a></h2><p>Es wurde untersucht, wie oft der Honeypot über die Zeitspanne von 30
+Tagen angegriffen wird. Im Verlauf dieser Zeit gingen 588'011
+Loginversuche vonstatten. Täglich wurde im Durchschnitt 18375,34 Mal
+probiert sich in den Honeypot einzuloggen. Am vierten Tag wurde die
+IP-Adresse des Honeypots von Shodan "gescraped" und folglich auf ihrer
+Website publiziert, was zu vermehrter "Traffic" führte. Shodan ist ein
+Service, der das ganze Internet scannt. Es scannt die am häufigsten
+benutzten Ports einer gegebenen IP-Adresse.</p><p><img alt="Anzahl Login Versuche über 30 Tage" src="/assets/images/login_attempts-686bef07705344c9beed419a04f55bb9.png" width="700" height="450"></p><h2 class="anchor anchorWithStickyNavbar_mojV" id="angriffe-per-land">Angriffe per Land<a class="hash-link" href="#angriffe-per-land" title="Direct link to heading">​</a></h2><p>Untersucht wird hier, wie oft der Honeypot nach Ländern sortiert
+angegriffen wird. In Abbildung 5 sind die zehn Länder, von welchen am
+meisten Loginversuche stammen, ersichtlich. China ist das Land, von dem
+am meisten Versuche ihren Ursprung haben. Bei genauerer Analyse wurde
+klar, dass diese Loginversuche von einer einzelnen IP-Adresse stammen.
+Dies führt zur Konklusion, dass dieser Akteur sich mit Hilfe von
+Bruteforce
+versuchte in den Honeypot einzuloggen.</p><p><img alt="Anzahl Login Versuche nach Länder" src="/assets/images/attacks_countries-ff535e53ce9add8340a501bd92fca19e.png" width="700" height="450"></p><h2 class="anchor anchorWithStickyNavbar_mojV" id="top-10-benutzernamen">Top 10 Benutzernamen<a class="hash-link" href="#top-10-benutzernamen" title="Direct link to heading">​</a></h2><p>In Abbildung 6 sind die zehn häufigsten ausprobierten Benutzernamen zu
+sehen. Umso grösser die Schrift, desto höher ist die Anzahl von
+Versuchen sich mit dem gegebenen Benutzernamen einzuloggen. Am meisten
+wurde mit dem Benutzernamen "root" sich versucht einzuloggen. "root" ist
+ein Standardpasswort, welches auf allen Linux Betriebssystemen
+existiert, und es dient der Administration des Computerystems.</p><p><img alt="Top 10 Benutzernamen" src="/assets/images/top10_usr-4d958ab955e9a76edb867cfcf78dce12.png" width="500" height="360"></p><h2 class="anchor anchorWithStickyNavbar_mojV" id="top-10-passwörter">Top 10 Passwörter<a class="hash-link" href="#top-10-passwörter" title="Direct link to heading">​</a></h2><p>Das Password "ubnt" ist jenes, welches am häufigsten zum Einloggen
+verwendet wurde, dies ist ersichtlich in Abbildung 7. Das Password wurde
+wegen des Betriebsystems Ubuntu, auf welchem Cowrie angibt zu laufen,
+derart oft probiert.</p><p><img alt="Top 10 Passwörter" src="/assets/images/top10_pass-dff59eae67ade052ecfbd3b0167558b6.png" width="500" height="360"></p><h2 class="anchor anchorWithStickyNavbar_mojV" id="top-10-benutzernamen-und-passwörter">Top 10 Benutzernamen und Passwörter<a class="hash-link" href="#top-10-benutzernamen-und-passwörter" title="Direct link to heading">​</a></h2><p>Die Wörterwolke in Abbildung 8 zeigt, dass die Kombination "ubnt:ubnt"
+die am häufigsten verwendete war. Diese Verwendung basiert auf dem
+Betriebssystem, welches verwendet wurde. Andere ausprobierte
+Kombinationen sind solche, die in Systemen standardmässig existieren und
+von Anwendern häufig nicht geändert werden.</p><p><img alt="Top 10 Benutzernamen und Passwörter" src="/assets/images/top10_usrpass-da7e817754d7ef1edd63fd34b1407fb5.png" width="500" height="360"></p><h1>Produkt</h1><h2 class="anchor anchorWithStickyNavbar_mojV" id="webapp">Webapp<a class="hash-link" href="#webapp" title="Direct link to heading">​</a></h2><p>Die Funktion der Webapp ist es, dem Benutzer zu ermöglichen, die
+Diagramme direkt generiert zu bekommen. In Abbildung 9 ist die Webapp
+mit mehreren Diagrammen zu sehen. Diese Diagramme können alle als Bild
+abgespeichert werden. Die einen haben diese Funktion von Plotly und für
+die anderen ist ein Knopf programmiert worden, welcher die gleiche
+Funktionalität ermöglicht.</p><p><img alt="Screenshot von Webapp" src="/assets/images/dash_screen-daef9348713456835a52c162d27c84e5.png" width="2688" height="1712"></p><h2 class="anchor anchorWithStickyNavbar_mojV" id="aufbau">Aufbau<a class="hash-link" href="#aufbau" title="Direct link to heading">​</a></h2><p>Für das Produkt wird als Grundlage für die Software ein Raspberry Pi
+benötigt. Cowrie wird auf dem Raspberry Pi installiert. Nach dieser
+Installation wird eine Konfiguration benötigt, welche die Logs als
+JSON-Dateien abspeichert. Das Helper Skript benutzt Pygtail, ein Modul,
+welches für jede neue Linie in einer Datei eine bestimmte Funktion
+auszuführen ermöglicht. In diesem Fall wird die Funktion für den Import
+in eine Datenbank ausgeführt. Das Frontend lädt sich jede Sekunde neu,
+um die aktuellsten Ergebnisse anzuzeigen. Die ganze Funktionsweise ist
+in Abbildung 10 aufgezeigt.</p><p><img alt="Funktionsweise des Produktes" src="/assets/images/funktionsweise_software-f3fc61d18010246f9ae0871b6f00ac5f.png" width="1702" height="822"></p><p>Im Diagramm in Abbildung 10 wird gezeigt, dass ein Angreifer den
+Raspberry Pi über den Netzwerk-Port 22 angreift. Dieser Angriff wird
+danach von Cowrie bearbeitet. D.h. Cowrie entscheidet dann per Zufall,
+ob der Angriff in die Konsole eingeloggt werden soll. Dies wird getan,
+um gegen die Überlastung des Host-Computers anzukämpfen.</p><p>In der Abbildung sind Cowrie und die Datei mit dem Namen <em>cowrie.json</em>
+mit einem Pfeil verbunden, welche von Cowrie erstellt wird. Ein vom
+Autor der vorliegenden Arbeit erstelltes Python-Skript überprüft die
+Datei periodisch nach neuen Zeilen. Falls <em>pygtail</em>, ein Python-Modul,
+eine neue Zeile entdeckt, dann bereitet es die Daten im JSON-Format auf
+und speichert diese in einer Datenbank ab. Sobald der vorherige Prozess
+endet, wird eine Funktion ausgeführt, welche die Diagramme für die
+Webapp aktualisiert. Dieser für die Webapp generierten HTML-Code wird
+wiederum in die Datenbank abgespeichert.</p><p>In der Webapp läuft im Hintergrund ein Javascript-Programm. Dieses fragt
+periodisch einen Zugriffspunkt nach der neusten Version der Diagramme.
+Diese Diagramme werden danach im HTML-Code ersetzt, sodass der
+Endbenutzer nichts davon mitbekommt.</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="funktionen">Funktionen<a class="hash-link" href="#funktionen" title="Direct link to heading">​</a></h2><p>Die Webapp hat die Funktion, dem Benutzer eine visuelle Darstellung von
+den Daten, die der Honeypot gesammelt hat. Es war klar, dass eine Webapp
+entwickelt werden soll. Denn es wurde gesehen, wie kompliziert die
+Datenstrutkur in den Log-Dateien sein kann. Folglich hat das Produkt
+eine klarere Zielgruppe. Nämlich Laien, welche an den Methoden eines
+Hackers interessiert sind.</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="diagramme-abspeichern">Diagramme abspeichern<a class="hash-link" href="#diagramme-abspeichern" title="Direct link to heading">​</a></h3><p>Ein klarer Hintergedanke der Webapp ist die Analyse der Daten und auch
+die Sicherung eines Bildes des generierten Diagrammes, da diese Webapp
+auch dazu dient, die Visualisierungen für diese Arbeit zu generieren.
+Diese können bei den Wörterwolken mit einem Klick auf den "Save as PNG"
+Knopf getätigt werden. In Abbildungen 4 und 5 ist die Möglichkeit
+vorhanden, den Ausschnitt des Diagrammes zu wählen und diesen mit Klick
+auf das Kamera-Bildchen abzuspeichern.</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="live-auswertung">Live-Auswertung<a class="hash-link" href="#live-auswertung" title="Direct link to heading">​</a></h3><p>Die Webapp lädt periodisch neue Daten vom Server herunter, damit der
+Endbenutzer immer die aktuellsten Daten auf einen Blick zu sehen
+bekommt. Diesen Parameter, wie oft die Webapp ihren Inhalt aktualisiert,
+kann im Quellcode angepasst werden.</p><h1>Erkenntnisse und Beantwortung der Leitfrage</h1><p>Nach der Analyse der gesammelten Daten konnte festgestellte werden, dass
+von einer chinesischen IP-Adresse ein Angriff auf den Honeypot gestartet
+wurde. Ein Angreifer hat ganz klar einen Grund, warum er gerade diese
+IP-Adresse angreift. Die Schritte, welche ein Angreifer durchläuft, sind
+nachfolgend beschrieben:</p><ul><li><p>Zuerst informiert sich der Angreifer über das Ziel.</p></li><li><p>Mit diesen gesammelten Informationen stellt sich der Anreifer nun
+ein Attack-Toolset zusammen.</p></li><li><p>Das Toolset dient dem Eindringen in ein Netzwerk.</p></li><li><p>Sobald sich der Angreifer im Netz befindet, versucht sich dieser
+darin zu etablieren.</p></li><li><p>Im Netzwerk, befindend mit Zugriffsrechten, versucht dieser
+Angreifer nun ausnutzbare Schwachstellen zu finden.</p></li><li><p>Sobald diese Schwachstellen gefunden wurden, wird eine spezifische
+Malware
+ausgeführt, welche dem Angreifer volle Kontrolle über ein
+Computersystem gibt.</p></li><li><p>Danach wird der eigentliche Angriff ausgeführt. Dieser ist der
+Grund, warum überhaupt angegriffen wurde. Dies kann wegen Erpressung
+mit Hilfe einer Ransomware sein oder auch wegen Datenexfiltration.</p></li></ul><p>Der aus China stammende Angriff hat versucht, sich im Netzwerk zu
+etablieren, wie man in den Logs sehen kann. Dieser war jedoch nicht
+erfolgreich, da das angegriffene System ein Honeypot ist, der gewisse
+Limitationen aufweist.</p><p>Die Schritte, welche der Angreifer durchgelaufen ist, wurden von
+Lockheed Martin <sup id="fnref-3"><a href="#fn-3" class="footnote-ref">3</a></sup> im Cyber Kill Chain Lockheed Martin <sup id="fnref-3"><a href="#fn-3" class="footnote-ref">3</a></sup> beschrieben. Verglichen
+mit der Literatur von zerodetail <sup id="fnref-17"><a href="#fn-17" class="footnote-ref">17</a></sup> zeigt sich, dass Honeypots am
+häufigsten von IP-Adressen, welche aus China stammen, angegriffen
+werden.</p><p>Im Prozess des Schreibens dieser Arbeit wurde klar, dass die Leitfrage
+einen falschen Weg vorschlägt. Denn dies Leitfrage nimmt an, dass ein
+Honeypot eine Option für die Verteidigung eines Heimnetzwerkes sein
+könnte. Jedoch ist dies eine etwas zu komplizierte Sache für den
+Privatanwender. Die Antwort auf die Leitfrage ist somit Nein, denn ein
+Honeypot ist keine effektive Schutzmethode für ein Heimnetzwerk. Ein
+Privatanwender sollte, um sich gegen mögliche Angreifer gut zu rüsten,
+regelmässig Backups machen, sei dies lokal oder in einer Cloud. Auch
+sollte der Anwender überprüfen, ob dessen Heimnetzwerk so konfiguriert
+ist, wie es dessen Internet-Service-Provider vorschlägt.</p><h1>Reflexion und Ausblick</h1><p>Im Nachhinein ist es offensichtlich, dass die Leitfrage nicht so
+beantwortet werden kann wie sie vorliegt. Anfangs war es schwierig, sich
+in die Denkweisen eines Wissenschaftlers zu versetzen und wirklich
+verwendbare Quellen zu finden. Im Verlauf der Arbeit wurde jedoch klar,
+welche Internet- und Buchquellen sich für eine solche Arbeit eignen.</p><p>Für eine nächste wissenschaftliche Arbeit würde ich als Autor im
+Allgemeinen zwei Dinge beachten: 1. Ich würde ein kleineres und
+spezifischeres Themenfeld auswählen. 2. Ich würde eine Arbeit wählen bei
+der das Produkt und nicht die gesammelten Daten analysiert werden.</p><p>Im Verlaufe der Programmierung dieser Arbeit habe ich die
+Programmiersprache gewechselt, da ich mit JavaScript nicht so
+zurechtgekommen bin wie ich mir das vorgestellt habe. Mit
+Python hingegen
+bin ich schon vor dem Start dieser Arbeit klargekommen. Mit dem
+Sprachwechsel wurde auch das Web-Framework von Angular zu Django
+gewechselt. Angular ist ein sehr breit gefächertes
+Framework,
+welches auch von Google, einer grossen Organisation, unterstützt wird.
+Diese breiten Funktionalitäten kommen aber nicht ohne Nachteile. Einer
+wäre, dass Angular selbst eine sehr grosse Lernkurve hat, hingegen mit
+Django kann schon mit wenigen Linien Programmcode eine funktionelle,
+dynamische Webseite erstellt werden.</p><p>Das Produkt, das nun am Ende existiert, liesse sich sehr gut noch
+weiterentwickeln und verbessern. Das grösste Problem ist im Moment die
+Geschwindigkeit des Ladens der Diagramme. Diese können sicherlich im
+JavaScript-Code und auch in Django verbessert werden. Eine Idee wäre
+auch noch, in der Webapp mehr Daten zu analysieren, wie z.B. die
+schadhaften Programme, welche auf den Server hochgeladen wurden. Weiter
+wäre es auch interessant, generell mehr Kontrolle über den RaspberryPi
+mit Hilfe des Webapps zu haben.</p><h1>Danksagungen</h1><p>Hiermit möchte ich allen danken, welche mir mit dieser Maturaarbeit
+geholfen haben und denen ich sehr dankbar dafür bin. Ich möchte im
+Speziellen meinem Betreuer Samuel Schaffhauser danken für die
+vortreffliche Betreuung. Vor allem möchte ich auch meiner Familie -
+meiner Mutter, meinem Vater, meinen beiden Schwestern sowie meiner Tante</p><ul><li>danken.Dderen kontinuierliche und grenzenlose Unterstützung, das
+geduldiges Korrekturlesen und die abendlichen Diskussionen haben dazu
+beigetragen, meine Maturaarbeit so verständlich und aussagekräftig wie
+möglich zu verfassen. Roland Tobler möchte ich danken für den Einblick
+in die Cybersecurity, dies hat mir sehr geholfen beim Schreiben dieser
+Arbeit.</li></ul><h1>Declaration of Honesty in Academic Work</h1><p>I hereby declare</p><ul><li><p>that this Matura thesis is my own work, and that I did not use any
+other sources than the cited ones,</p></li><li><p>that I explicitly mention any help by third party,</p></li><li><p>that I will inform the headmaster as well as my advisor in case that
+I</p><ul><li>publish this entire thesis or parts of it,</li></ul><p>or</p><ul><li>hand out copies of this thesis to third party for further
+distribution.</li></ul></li><li><p>that I am aware of the contents of the document "Plagiat" and also
+of the consequences of plagiarism.</p></li></ul><h1>Redlichkeitserklärung</h1><p>Ich erkläre hiermit,</p><ul><li><p>dass ich die vorliegende Arbeit selbständig verfasst und nur die
+angegebenen Quellen benutzt habe,</p></li><li><p>dass ich auf eine eventuelle Mithilfe Dritter in der Arbeit
+ausdrücklich hinweise,</p></li><li><p>dass ich vorgängig die Schulleitung und die betreuende Lehrperson
+informiere, wenn ich</p><ul><li>diese Maturarbeit bzw. Teile oder Zusammenfassungen davon
+veröffentlichen werde</li></ul><p>oder</p><ul><li>Kopien dieser Arbeit zur weiteren Verbreitung an Dritte
+aushändigen werde.</li></ul></li><li><p>dass mir das Merkblatt "Plagiat" sowie auch die Konsequenzen eines
+Plagiats bekannt sind.</p></li></ul><p>Luzern,</p><p>Enea Krähenbühl</p><hr><h2 class="anchor anchorWithStickyNavbar_mojV" id="glossar">Glossar<a class="hash-link" href="#glossar" title="Direct link to heading">​</a></h2><p>Python
+: <a href="https://python.org" target="_blank" rel="noopener noreferrer">Python</a> ist eine <em>höhere</em> Programmiersprache, welche von Guido van Rossum entwickelt wurde. Bei der Entwicklung von Python wird Wert auf Einfachheit und Übersichtlichkeit gelegt. Vielerorts ist Python auch die Programmiersprache welche jungen Teenagern als Einstieg in die Informatik empfohlen wird</p><p>Exploit
+: Ein Programm, welches eine Sicherheitslücke ausnutzt</p><p>Malware
+: in Deutsch <em>Schadsoftware</em>; Software, welche einem Gerät digitalen Schaden zurichten kann</p><p>QEMU
+: Abkürzung für <em>Quick EMUlator</em>; ein Emulator ist eine Software, die es ermöglicht, ein Computersystem innerhalb von einem anderen Computersystem laufen zu lassen</p><p>Dateisystem
+: Nach Wikipedia ist es ein <em>Computerprogramm, das als Bestandteil des Betriebssystems das Speichern, Lesen und Löschen von Dateien auf einem Datenträger organisiert</em></p><p>UML
+: Abkürzung für <em>User Mode Linux</em>; UML erlaubt es komplette Linux-Kernel innerhalb eines Linux-Systems als Applikationsprozess auszuführen (Quelle: Wikipedia); ein Kernel ist ein Komponent in einem Betriebssystem, welcher zwischen den verschiedenen Hardware-Komponenten und der Software steht und somit wie ein Übersetzer einer bestimmten Art agiert</p><p>SQL
+: Abkürzung für <em>Sequel Query Language</em>; eine Sprache, welche den Nutzen hat, mit einer Datenbank zu interagieren</p><p>Plugin
+: Ein Zusatz zu einem Programm, welches nach Belieben eines Nutzers installiert werden kann</p><p>Framework
+: Nach <a href="https://praxistipps.chip.de/was-ist-ein-framework-einfach-erklaert_41348" target="_blank" rel="noopener noreferrer">Chip.de</a>: <em>Ein Programm-Code besteht aus vielen kleinen Bausteinen. Um das Programmieren zu erleichtern und Zeit zu sparen, gibt es sogenannte Frameworks. Sie sind keine eigenständigen Programme, sondern stellen ein Programmiergerüst für den Entwickler dar</em></p><p>IRC
+: Abkürzung für <em>Internet Relay Chat</em>; nach Wikipedia <em>bezeichnet IRC ein textbasiertes Chat-System</em>; in dieser Arbeit bezieht sich IRC auf die Kontrolle und Steuerung eines Servers</p><p>Social Engineering
+: Das <em>Hacken</em> von Menschen; Mit hilfe von geschickter Sprache und Verkörperung wird ein Opfer getäuscht etwas zu tun</p><p>Backdoor
+: in Deutsch <em>Hintertüre</em>; in der Cybersecurity ist dies für einen Angreifer eine Möglichkeit auf ein System zuzugreifen ohne, dass dieser das konventionelle Login-System benutzt</p><p>Brückenkopf
+: Nach dem Duden <em>kleines Geländestück, das auf dem feindlichen Ufer besetzt worden ist und das als Ausgangsbasis für die weiteren Kampfhandlungen dient</em>; hier ist dies ein Computer, der angegriffen wird, welcher als Ausgangspunkt für weitere Angriffe gilt</p><p>Command and Control
+: in Deutsch <em>Kontrolle und Steuerung</em>; hier Kontrolle und Steuerung eines Computersystems</p><p>Kommandozeilenprogramm
+: Ein Programm welches in der Kommandozeile läuft, d.h. es wird mit einem Tex-Input Feld bedient.</p><p>dynamische Website
+: Eine Website welche sich verändert, z.B. <em>eine Zeitung-Website soll neue Artikel automatisch auf der Website anzeigen</em></p><p>exponiert
+: Gemäss Duden <em>in eine der Aufmerksamkeit oder möglichen Angriffen, Gefahren ausgesetzte Lage, Situation bringen</em></p><p>ORM
+: Abkürzung für <em>Object-Relational Mapper</em>; ein Komponent in Django, welcher die Interaktion mit einer Datenbank auf einem einfachen Wege ermöglicht.</p><p>AWS
+: Abkürzung für Amazon Web Services. Ein Teil von Amazon Inc. der Webservices anbietet.</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="literaturverzeichnis">Literaturverzeichnis<a class="hash-link" href="#literaturverzeichnis" title="Direct link to heading">​</a></h2><div class="footnotes"><hr><ol><li id="fn-1">Lukas Mäder. Bund warnt vor Attacken. 17. März 2020. url: <a href="https://www.nzz.ch/schweiz/nach-cyberangriff-auf-tschechisches-" target="_blank" rel="noopener noreferrer">https://www.nzz.ch/schweiz/nach-cyberangriff-auf-tschechisches-</a> spital-warnt-auchder-bund-vor-attacken-ld.1546736 (besucht am 10. 06. 2020).<a href="#fnref-1" class="footnote-backref">↩</a></li><li id="fn-2">Risk Based Security. Number of Records Exposed in 2019 Hits 15.1 Billion. 10. Feb.2020. url: <a href="https://riskbasedsecurity.com/2020/02/10/number-of-records-exposed-in-2019-hits-15-1-billion/" target="_blank" rel="noopener noreferrer">https://riskbasedsecurity.com/2020/02/10/number-of-records-exposed-in-2019-hits-15-1-billion/</a> (besucht am 13. 07. 2020).<a href="#fnref-2" class="footnote-backref">↩</a></li><li id="fn-3">Lockheed Martin. About Lockheed Martin. 3. Sep. 2020. url: <a href="https://www.lockheedmartin.com/en-us/who-we-are.html" target="_blank" rel="noopener noreferrer">https://www.lockheedmartin.com/en-us/who-we-are.html</a> (besucht am 03. 09. 2020).<a href="#fnref-3" class="footnote-backref">↩</a></li><li id="fn-4">Kaspersky. Was ist Cybersicherheit? 2020. url: <a href="https://www.kaspersky.de/resource-center/definitions/what-is-cyber-security" target="_blank" rel="noopener noreferrer">https://www.kaspersky.de/resource-center/definitions/what-is-cyber-security</a> (besucht am 26. 08. 2020).<a href="#fnref-4" class="footnote-backref">↩</a></li><li id="fn-5">Lockheed Martin. The Cyber Kill Chain. 3. Sep. 2020. url: https ://<a href="http://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-" target="_blank" rel="noopener noreferrer">www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-</a> chain.html (besucht am 03. 09. 2020).<a href="#fnref-5" class="footnote-backref">↩</a></li><li id="fn-6">Peter Schmitz. Cyber Kill Chain - Grundlagen, Anwendung und Entwicklung.19. Mai 2017. url: <a href="https://www.security-insider.de/cyber-kill-chaingrundlagen-anwendung-und-entwicklung-a-608017/" target="_blank" rel="noopener noreferrer">https://www.security-insider.de/cyber-kill-chaingrundlagen-anwendung-und-entwicklung-a-608017/</a> (besucht am 05. 09. 2020).<a href="#fnref-6" class="footnote-backref">↩</a></li><li id="fn-7">Dipl.-Ing. (FH) Stefan Luber. Was ist ein Honeypot? 2018. url: <a href="https://www.security-insider.de/was-ist-ein-honeypot-a-703883/" target="_blank" rel="noopener noreferrer">https://www.security-insider.de/was-ist-ein-honeypot-a-703883/</a> (besucht am 14. 08. 2020).<a href="#fnref-7" class="footnote-backref">↩</a></li><li id="fn-8">ionos.de. Honeypot: IT-Sicherheit durch Ablenkprogramme - IONOS. 2019. url:<a href="https://www.ionos.de/digitalguide/server/sicherheit/honeypot-itsicherheit-durch-ablenkprogramme/" target="_blank" rel="noopener noreferrer">https://www.ionos.de/digitalguide/server/sicherheit/honeypot-itsicherheit-durch-ablenkprogramme/</a> (besucht am 14. 08. 2020).<a href="#fnref-8" class="footnote-backref">↩</a></li><li id="fn-9">Chapter 5 - Honeypotting. In: Virtualization for Security. Hrsg. von John Hoopes.Boston: Syngress, 2009, S. 117143. isbn: 978-1-59749-305-5. doi: <a href="https://doi.org/10.1016/B978-1-59749-305-5.00005-0.url" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/B978-1-59749-305-5.00005-0.url</a>: <a href="http://www.sciencedirect.com/science/article/pii/B9781597493055000050" target="_blank" rel="noopener noreferrer">http://www.sciencedirect.com/science/article/pii/B9781597493055000050</a>.<a href="#fnref-9" class="footnote-backref">↩</a></li><li id="fn-10">Spitzner Lance. Honeypots: Tracking Hackers. Addison-Wesley Professional, 2002.<sup id="fnref-11"><a href="#fn-11" class="footnote-ref">11</a></sup>: awhitehatter. Mailoney an SMTP Honeypot. 18. Aug. 2020. url: <a href="https://github.com/awhitehatter/mailoney" target="_blank" rel="noopener noreferrer">https://github.com/awhitehatter/mailoney</a> (besucht am 18. 08. 2020).<a href="#fnref-10" class="footnote-backref">↩</a></li><li id="fn-12">Michael Osterheim. Cowrie SSH and Telnet Honeypot. 18. Aug. 2020. url: <a href="https://github.com/cowrie/cowrie" target="_blank" rel="noopener noreferrer">https://github.com/cowrie/cowrie</a> (besucht am 18. 08. 2020).<a href="#fnref-12" class="footnote-backref">↩</a></li><li id="fn-13">Red Hat, Inc. What are cloud providers? 20. Aug. 2020. url: <a href="https://www.redhat.com/en/topics/cloud-" target="_blank" rel="noopener noreferrer">https://www.redhat.com/en/topics/cloud-</a> computing/what- are- cloud- providers (besucht am 20. 08. 2020).<a href="#fnref-13" class="footnote-backref">↩</a></li><li id="fn-14">Amazon Web Services. Amazon EC2. 5. Sep. 2020. url: <a href="https://aws.amazon.com/de/ec2/" target="_blank" rel="noopener noreferrer">https://aws.amazon.com/de/ec2/</a> (besucht am 05. 09. 2020).<a href="#fnref-14" class="footnote-backref">↩</a></li><li id="fn-15">Raspberry. Raspberry Pi. 5. Sep. 2020. url: <a href="https://raspberrypi.org" target="_blank" rel="noopener noreferrer">https://raspberrypi.org</a> (besuchtam 05. 09. 2020).<a href="#fnref-15" class="footnote-backref">↩</a></li><li id="fn-16">Amazon Web Services, Inc. AWS Free Tier. 23. Aug. 2020. url: <a href="https://aws.amazon.com/free/" target="_blank" rel="noopener noreferrer">https://aws.amazon.com/free/</a> (besucht am 23. 08. 2020).<a href="#fnref-16" class="footnote-backref">↩</a></li><li id="fn-17">zerodetail. Analyzing cowrie honeypot. 14. Sep. 2020. url: <a href="https://zeroaptitude.com/zerodetail/analyzing-cowrie-honeypot-results/" target="_blank" rel="noopener noreferrer">https://zeroaptitude.com/zerodetail/analyzing-cowrie-honeypot-results/</a> (besucht am 10. 06. 2020).<a href="#fnref-17" class="footnote-backref">↩</a></li></ol></div>]]></content:encoded>
+            <category>honeypot</category>
+            <category>maturaarbeit</category>
+            <category>academic work</category>
+        </item>
+    </channel>
+</rss>
