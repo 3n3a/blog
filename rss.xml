@@ -43,8 +43,8 @@
             <link>https://blog.3n3a.ch/honeypot-cowrie-maturaarbeit</link>
             <guid>honeypot-cowrie-maturaarbeit</guid>
             <pubDate>Fri, 19 Mar 2021 09:25:38 GMT</pubDate>
-            <description><![CDATA[Die Idee zum Einstieg ins Themenfeld von Cyber-Sicherheit bekam ich beim]]></description>
-            <content:encoded><![CDATA[<p>Die Idee zum Einstieg ins Themenfeld von Cyber-Sicherheit bekam ich beim
+            <description><![CDATA[Eine Maturaarbeit über die Installation eines SSH Honeypots auf AWS und der subsequenten Analyse der gesammelten Daten.]]></description>
+            <content:encoded><![CDATA[<p>Eine Maturaarbeit über die Installation eines SSH Honeypots auf AWS und der subsequenten Analyse der gesammelten Daten.</p><h1>Einleitung und Fragestellung</h1><p>Die Idee zum Einstieg ins Themenfeld von Cyber-Sicherheit bekam ich beim
 lesen eines Tweets, welcher dazu führte, dass ich im Internet nachlas,
 was denn Cyber-Sicherheit überhaupt ist, und welche verschiedenen
 Themenfelder existieren. Ein Artikel in der Neuen Zürcher Zeitung,
