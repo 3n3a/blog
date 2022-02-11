@@ -8,6 +8,9 @@ tags: [guide, macos, windows]
 
 _This guide covers the installation of Windows 10 on an Apple Mac. For demonstration purposes an [iMac (Mid-2011)](https://everymac.com/systems/apple/imac/specs/imac-core-i5-2.7-21-inch-aluminum-mid-2011-thunderbolt-specs.html) was utilised._
 
+<!--truncate-->
+
+
 _This guide aims to show that Windows 10 can be installed without the use of Bootcamp at all. But as far as I know you still need a Mac for certain Steps._
 
 > If you own a newer Mac it might be worthwile using the Official Boot Camp Installation & Setup Guide. But also if you need further guidance, which you can't find on [Apple's Forums](https://discussions.apple.com/community/windows_software/boot_camp).

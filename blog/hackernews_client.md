@@ -8,6 +8,8 @@ tags: [hackernews, api]
 
 My idea was to develop a hackernews client, I know so many others exist already. But I wanted to try for myself.
 
+<!--truncate-->
+
 I started out by finding an API that would allow me to lean back and relax. This API is called [hackerfeed.dev](https://hackerfeed.dev), I believe to have found it on hackernews.
 
 Afterwards I moved onto designing the Frontend, for this I wanted to use pre-made bootstrap components. For that I used MDBootstrap, a Framework that combines Material, from Google and Bootstrap into one capitalistic creation.

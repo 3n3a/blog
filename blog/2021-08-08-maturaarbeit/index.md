@@ -7,6 +7,11 @@ authors: enk
 tags: [honeypot, maturaarbeit, academic work]
 ---
 
+Eine Maturaarbeit über die Installation eines SSH Honeypots auf AWS und der subsequenten Analyse der gesammelten Daten.
+
+<!--truncate-->
+
+
 Einleitung und Fragestellung
 ============================
 

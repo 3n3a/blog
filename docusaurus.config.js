@@ -25,9 +25,9 @@ const config = {
         docs: false,
         blog: {
           routeBasePath: '/',
-
+          blogSidebarCount: 'ALL',
+          postsPerPage: 'ALL',
           blogTitle: '3n3a\'s Blog',
-          postsPerPage: 1,
           showReadingTime: true,
           editUrl:
             'https://github.com/3n3a/blog/tree/main/',
