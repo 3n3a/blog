@@ -78,6 +78,6 @@ Your Phoenix Application should now be running at [http://127.0.0.1:4000](http:/
 
 If you can see this picture you have yourself a working Phoenix Application. 
 
-![](/img/phoenix_web.jpg) 
+![](/img/A9AB9B55-9E9D-4031-BDD5-847C6D291A43.png)
 
 *[Source](https://hexdocs.pm/phoenix/up_and_running.html)*
