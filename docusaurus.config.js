@@ -30,7 +30,7 @@ const config = {
           blogTitle: '3n3a\'s Blog',
           showReadingTime: true,
           editUrl:
-            'https://github.com/3n3a/blog/tree/main/',
+            'https://github.com/3n3a/blog/tree/master/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -86,7 +86,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} 3n3a's Blog. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Enea "3n3a" Krähenbühl.`,
       },
       prism: {
         theme: lightCodeTheme,
