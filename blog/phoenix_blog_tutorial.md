@@ -1,7 +1,7 @@
 ---
 title: "Create a Blog with Phoenix in Elixir."
 date: 2022-07-16 13:42:00
-draft: true
+draft: false
 authors: enk
 tags: [tutorial, phoenix, elixir, webframework]
 ---
