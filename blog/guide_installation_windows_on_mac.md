@@ -1,7 +1,7 @@
 ---
 title: "Guide: Install Windows on a Mac"
 date: 2021-04-18T16:12:16+01:00
-draft: false
+draft: true
 authors: enk
 tags: [guide, macos, windows]
 ---
