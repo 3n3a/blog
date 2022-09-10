@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[244],{8898:function(a){a.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/maturaarbeit","name":"maturaarbeit","count":1,"permalink":"/tags/maturaarbeit"}')}}]);
