@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[447],{8820:function(a){a.exports=JSON.parse('{"label":"academic work","permalink":"/tags/academic-work","allTagsPath":"/tags","count":1}')}}]);

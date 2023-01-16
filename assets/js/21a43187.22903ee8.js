@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[298],{6715:function(s){s.exports=JSON.parse('{"label":"elixir","permalink":"/tags/elixir","allTagsPath":"/tags","count":1}')}}]);
