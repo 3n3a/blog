@@ -8,6 +8,7 @@ tags: [tutorial, node-js, express-js]
 
 Ein JavaScript-Webserver mit Express.js zu implementieren ist einfach und schnell. Express.js ist ein leichtgewichtiges Framework für Node.js, das es Entwicklern ermöglicht, einen Webserver zu erstellen und zu verwalten. In diesem Essay werden wir Schritt für Schritt durch den Prozess gehen, um einen einfachen Webserver mit Express.js zu erstellen.
 
+<!--truncate-->
 
 ## Schritt 1: Node.js installieren
 
