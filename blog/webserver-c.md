@@ -56,6 +56,7 @@ listen(server_fd, MAX_CONNECTIONS);
 Once we have begun listening for connections, we can use the accept() function to accept incoming connections and create a new socket for communicating with the client.
 
 ```c
+int addrlen = sizeof(address);
 int new_socket = accept(server_fd, (struct sockaddr *)&address, (socklen_t*)&addrlen);
 ```
 
@@ -99,10 +100,10 @@ int main(int argc, char const *argv[]) {
     address.sin_port = htons( PORT );
     bind(server_fd, (struct sockaddr *)&address, sizeof(address));
     listen(server_fd, MAX_CONNECTIONS);
-
+    int addrlen = sizeof(address);
     int new_socket = accept(server_fd, (struct sockaddr *)&address, (socklen_t*)&addrlen);
     char *hello = "Hello World";
-    send(new_socket , hello , strlen(hello) , 0 );
+    send(new_socket , hello , strlen(hello) , 0);
     close(new_socket);
 
     return 0;
