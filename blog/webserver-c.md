@@ -1,6 +1,6 @@
 ---
 title: "A Guide to Creating a \"Hello World\" Webserver in C"
-date: 2022-01-16 13:42:00
+date: 2023-01-16 16:42:00
 draft: false
 authors: enk
 tags: [tutorial, c, webserver]
@@ -30,7 +30,7 @@ Next, we will define some constants that will be used throughout our program. Th
 #define MAX_CONNECTIONS 5
 ```
 
-#3 Step 3: Create the Server Socket
+## 3 Step 3: Create the Server Socket
 
 Now we will create the server socket that will be used to listen for incoming connections. The socket() function is used to create a new socket, and the bind() function is used to associate the socket with a specific port number.
 
