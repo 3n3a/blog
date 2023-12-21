@@ -45,3 +45,13 @@ Occurred when container wasn't fully removed. Threw "endpoint with name xx alrea
 ```sh
 docker network disconnect -f <network> <container>
 ```
+
+## Run Docker (Rootful Mode) as normal User
+
+Add current user to docker group
+
+```bash
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+```
