@@ -600,4 +600,3 @@ _``ng-if`` vs. ``ng-show``_
 * [ServiceNow Product Documentation - Developer and deployment permissions](https://www.servicenow.com/docs/csh?topicname=developer-permissions.html&version=latest)
 * [ServiceNow Developer - What is Source Control](https://developer.servicenow.com/dev.do#!/learn/learning-plans/yokohama/new_to_servicenow/app_store_learnv2_devenvironment_yokohama_what_is_source_control)
 * [ServiceNow Product Documentation - Create a REST (Integration Hub) Data Source](https://www.servicenow.com/docs/csh?topicname=create-rest-type-data-source.html&version=latest)
-* [ServiceNow Product Documentation - ](aaa)
