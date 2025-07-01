@@ -282,6 +282,78 @@ _Poplate record producer data and redirect users_
   * Navigate to System Definition → Modules or via Studio → Application Explorer → Navigation → Modules → [Module].
   * In the Visibility (roles) field, add the roles that should have access. Users without those won’t see the module (
 
+**Manually and automatically create, test, and debug Access Controls**
+
+* Create ACLs
+  * Manually
+    * With the `security_admin` role you can elevate yourself
+    * Now create ACLs
+  * Automatically
+    * When creating a table you can select a checkbox and ACLs are created
+* Test ACLs
+  * Impersonate as User and access a table / record / field
+  * Or use "Access Analyzer"
+  * Or use "Debug Security Rules" Module
+* Debug ACLs
+  * Same as above
+
+_Debug Security Rules Output_
+
+| Icon | Description |
+| --- | --- |
+| A green checkmark (Green checkmark‎) | Indicates the table or field passed the criteria. |
+| A red x icon (Red x icon)	| Indicates the table or field did not pass. |
+| An empty gray circle icon (Grey circle icon‎) | Indicates the ACL evaluation did not need to be performed. |
+| A blue checkmark, x, or empty circle | Indicates that the ACL was taken from a cached result of a previous ACL check. The icons mean the same as the above. |
+
+_ACL Execution Order_
+
+* From most specific (field), to most generic (record)
+  * If a user fails a table ACL rule, the user is denied access to all fields in the table, even if the user passes a field ACL rule.
+  * If a user passes a table ACL rule, but fails a field ACL rule, the user cannot access the field described by the field ACL rule
+* Order in General: Table evaluated first, then field
+* Order in ACL: Roles, Condition, Script
+
+**Use GlideSystem methods to script security**
+
+Important methods:
+
+* Server-Side: GlideSystem (gs)
+  * getUser()
+  * getUserID()
+  * getUserName()
+  * hasRole()
+  * isLoggedIn()
+  * isInteractive()
+  * getSession()
+
+**Other Scripted Security Methods**
+
+_The client-side GlideUser (g_user) API has these methods:_
+
+* hasRole()
+* hasRoleExactly()
+* hasRoleFromList()
+* hasRoles()
+
+The client-side API methods can be used in any client-side script, such as Client Scripts and UI Policy scripts. Client-side security is the easiest security to break. Do not depend on client-side scripts to secure sensitive data.
+
+_The server-side GlideSystem (gs) API has these methods:_
+
+* getUser()
+* getUserID()
+* getUserName()
+* hasRole()
+* isLoggedIn()
+* isInteractive()
+* getSession()
+
+_The server-side GlideElement API has methods to check whether a user's role allows them to access the associated GlideRecord(s):_
+
+* canCreate()
+* canRead()
+* canWrite()
+
 ### Application Automation
 
 ### Working with External Data
@@ -309,3 +381,5 @@ _``ng-if`` vs. ``ng-show``_
 * [ServiceNow Community - Understanding Application Scope](https://www.servicenow.com/community/developer-articles/understanding-application-scope-on-the-now-platform-whitepaper/ta-p/2326214)
 * [ServiceNow - Custom Table Guide](https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/legal/custom-table-guide.pdf)
 * [ServiceNow - Data Encryption Whitepaper](https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/resource-center/white-paper/wp-data-encryption-with-servicenow.pdf)
+* [ServiceNow Product Documentation - Exploring Access Control List](https://www.servicenow.com/docs/bundle/vancouver-platform-security/page/administer/contextual-security/concept/exploring-access-control-list.html)
+* [ServiceNow Product Documentation - ACL rule types](https://www.servicenow.com/docs/bundle/xanadu-platform-security/page/administer/contextual-security/concept/acl-rule-types.html)
