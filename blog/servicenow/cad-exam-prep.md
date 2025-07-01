@@ -354,11 +354,216 @@ _The server-side GlideElement API has methods to check whether a user's role all
 * canRead()
 * canWrite()
 
+**Use Application Scope to protect application artifacts**
+
+_Application design and runtime_
+
+* JavaScript Mode: Configurable which JavaScript version the scope supports (ES2021 / ES5)
+* Runtime Access Tracking: 
+    * None: Automatically accept all requests for cross-scope resources, without logging
+    * Tracking: Automatically accept all requests for cross-scope resources, with logging
+    * Enforcing: Manual authorization by an administrator for cross-scope requests, with logging
+* Restrict Table Choices: Restrict which cross scope tables can be seen by the application
+
+> **Important**: After installation, the system no longer tracks new runtime access requests. Only during development.
+
+Runtime access requests / grants are stored in related list "Cross-scope privilege"
+
+_Table design and runtime_
+
+Records:
+* Accessible from: All application scopes / this application scope only
+* Can read: 
+    * required for all other options to be available
+    * Allow other applications to read from this table
+    * if this + accessible from --> Other Applications can create Business Rules
+* Can write
+    * Allow other applications to write values to this table
+* Can create
+    * Allow script object from other applications to create records on this table
+* Can delete
+    * Allow script object from other applications to delete records from this table
+* Allow access to this table via web services: 
+    * Allow inbound webservice queries on this table. User still needs correct permissions. Even without checkbox.
+
+Configuration:
+* Allow configuration: 
+    * Accessible from needs to be set to "All application scopes"
+    * Allows applications in other scopes to create the following on this table:
+        * Business Rules
+        * UI Actions
+        * Client Scripts
+        * Add fields (extended fields are in different scope)
+
+_Script protection policy_
+
+You can protect your script with the following options:
+* None: Allow other application developers to customize your script
+* Read-only: Allow other application developers read-only access
+* Protected: Prevent other application developers from access and customization
+
+> **Important**: This is only enforced on instances where application not developed, and for Store-Apps. For all others you can just remove the Protection Policy.
+
+
 ### Application Automation
+
+**Write, test, and debug Workflow and Flow Designer**
+
+Flow Designer enables process owners to automate work by building multi-step flows from reusable components without having to code. Workflows handle business process automation with drag-and-drop functionality, while Flow Designer provides a modern no-code approach for creating automated processes with actions, triggers, and data flow management.
+
+**Create and use Application Properties**
+
+Application properties are used to set application parameters and change application behavior dynamically. These are configuration settings that allow developers to create customizable variables for applications, enabling runtime behavior modifications without code changes.
+
+* Flow-Designer: Testing a flow which modifies data has no option of rollback.
+
+**Create Events, Scheduled Script Executions (Scheduled Jobs), and Utils (application) Script Includes**
+
+Events trigger automated responses to system changes. Scheduled jobs operate in the background via worker and execute scripts at predetermined times or intervals. Script Includes contain reusable server-side JavaScript functions that can be called from other scripts throughout the application.
+
+* Events: Register Event, generate event, handle event
+* Event Handlers: Email Notification, Script Action (Script executed when event)
+* Schedule Script Execution: Available Classes are GlideRecord and GlideSystem (of course more). But no current object
+
+**Send and receive email**
+
+Applications can process incoming email and send notifications ServiceNow Developers. This involves configuring email notifications, creating inbound email actions to process incoming messages, and using notification records to send automated emails based on system events.
+
+![](/img/servicenow/inbound-action-processing.png)
+
+* Inbound Email
+    * In Script has these options: current, email, event
+    * Inbound email flows take priority over scripts
+    * User matching:
+        * By email address
+        * if no user found -> 
+    * Inbound Action
+        * if from untrusted domain, or user not matched impersonates guest user
+        * if user locked out inbound action fails
+        * otherwise if user exists impersonates that user
+    * Email will be moved to Junk Folder if
+        * Email ignored: If an email is ignored, it will be sent to the junk folder.
+        * Email not in Trusted Domains: If the email domain is not added in the Trusted Domains field in Email Properties.
+        * Inbound email action: If the message is ignored by an inbound email action.
+        * SPAM protection: If the email headers have "X-ServiceNow-Spam-Flag:YES", it indicates the email may be spam.
+        * Email Filters: Enabling the email filter plugin brings filters like Ignore header, Ignore sender, Ignore subject, and Move to Junk.
+        * Email sender passed: This sender, along with the user being locked out or inactive, can cause emails to end up in the Junk folder.
+* Outbound Email
+    * triggered by event
+    * triggered by condition on table
+    * weight - only email with highest weight is sent if
+        * .. they have same target table and recipients
+    * default weight = 0 (email always sent if condition met)
+
+**Design and create homepages and reports**
+
+Homepages provide customized dashboards with widgets and performance analytics for users. Reports generate data visualizations and summaries from ServiceNow tables, allowing for scheduled distribution and real-time monitoring of application metrics and KPIs.
+
+* Gauge: Visualization component on homepage
+
 
 ### Working with External Data
 
+**Import data in CSV or Excel format** 
+
+* Use the "Load Data" module
+* This creates a System Import Set
+* You can then use Transform Maps to map imported columns to preexisting columns in servicenow tables
+
+> If the fields in import and target table are the same (or at least some) you can use "Auto map matching fields" on Table Transform Map related links. This will create mapping records for all the fields withe the same names.
+
+**Integrate to, including testing and debugging, an external data source using REST**
+
+1. Create REST Message (Base) and Endpoint (URL)
+2. Create Request action: Like another action in Workflow Studio but specifically for REST Messages
+3. Create Data Source in Module: `All > System Import Sets > Administration > Data Sources` from type RESt
+4. Configure Data Source options like parsing and data xpath
+
+> Or more modern would be to use a "Data Stream" action, which is essentiall the same :)
+
+_Testing_
+
+Either manually
+
+or with ATF
+
+* has no Test-Step limit
+
 ### Managing Applications
+
+**Download and install applications**
+
+Applications can be retrieved:
+* ... from the Store
+* ... from Company Registry
+* ... via Update Set
+
+_Store_
+
+1. Entitle in Store
+2. Install in Application Manager
+
+_Company Registry_
+
+1. Go to "My Company Applications"
+2. Install a specific version
+
+_Update Set_
+
+1. Retrieve / upload update set
+2. Apply
+
+**Use Delegated Development to manage source code and code review**
+
+_Delegated Development_
+
+Add developers (non-admins) or groups which can develop and/or deploy the application. 
+
+> **Important**: Developer permissions are available only for scoped apps, not global apps.
+
+These granular permission can be defined for each developer/group:
+
+Developer Permissions
+* Delete Application: Allows deletion of scoped applications.
+* Source Control: Grants full access to source control.
+* All File Types: Access to all application file types, similar to admin role with limitations.
+* Playbooks: Access to create processes in the Playbooks design environment.
+* Integrations: Access to web service APIs and Integration Hub.
+* Reporting: Access to reports and scheduled reports.
+* Notifications: Manage automatic email notifications.
+* Decision Tables: Create decision logic with multiple rules.
+* Mobile Builders: Access to mobile app builders.
+* UI Builder: Create pages for experiences.
+* Workflow: Access to Workflow Editor and Activity Creator.
+* Service Catalog: Manage catalog-related file types.
+* Service Portal: Access to Service Portal tools.
+* Workflow Studio: Create flows and actions.
+* Tables & Forms: Manage model and layout file types.
+* Manage ACLs & Roles: Access to security-related file types.
+* Allow Scripting: Write access to script fields.
+* Manage Collaborators: Invite and manage users/groups.
+* Delegated Admin: Access to all delegated development permissions.
+
+Deployment Permissions
+* Upgrade App: Permission to upgrade installed applications.
+* Publish To Update Set: Publish applications to update sets.
+* Publish To App Store: Publish applications to ServiceNow Store.
+* Manage Update Set: Manage local and retrieved update sets.
+* Publish To App Repo: Publish applications to the application repository.
+* Submit for Deployment: Submit applications for review and deployment.
+
+_Team Development_
+
+Allows paralell programming with git-like source control between multiple servicenow instances. You develop on subprod-instances and push to a parent instance.
+
+There Team Development administrators have the option to require peer review before changes applied. 
+
+**Use the ServiceNow Git integration to manage source code**
+
+Allows developers to store source code and configuration records of an application in a git repository. On a git server.
+
+* Actions possible in servicenow and on git-server: Create Branch
+* Store local changes for later use: Stash
 
 ### Coding
 
@@ -384,3 +589,15 @@ _``ng-if`` vs. ``ng-show``_
 * [ServiceNow Product Documentation - Exploring Access Control List](https://www.servicenow.com/docs/bundle/vancouver-platform-security/page/administer/contextual-security/concept/exploring-access-control-list.html)
 * [ServiceNow Product Documentation - ACL rule types](https://www.servicenow.com/docs/bundle/xanadu-platform-security/page/administer/contextual-security/concept/acl-rule-types.html)
 * [ServiceNow Developer - Securing Applications against unauthorized access](https://developer.servicenow.com/dev.do#!/learn/learning-plans/xanadu/new_to_servicenow/app_store_learnv2_securingapps_xanadu_scripting_security)
+* [ServiceNow Product Documentation - Javascript engine feature support](https://www.servicenow.com/docs/csh?topicname=javascript-engine-feature-support.html&version=latest)
+* [ServiceNow Product Documentation - Application access settings](https://www.servicenow.com/docs/csh?topicname=c_ApplicationAccessSettings.html&version=latest)
+* [ServiceNow Product Documentation - Script protection policy](https://www.servicenow.com/docs/csh?topicname=c_ScriptProtectionPolicy.html&version=latest)
+* [ServiceNow Product Documentation - Access enforcement for ServiceNow Store apps](https://www.servicenow.com/docs/csh?topicname=c_SubscriptionEnforcement.html&version=latest)
+* [ServiceNow Support - Email Notification -WEight ](https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0829694)
+* [ServiceNow Product Documentation - Matching Email to Existing User](https://www.servicenow.com/docs/csh?topicname=r_MatchingEmailToExistingUsers.html&version=latest)
+* [ServiceNow Support - Inbound Email moved to Junk Folder](https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0744905)
+* [ServiceNow Product Documentation - Team Development - Code Review](https://www.servicenow.com/docs/csh?topicname=c_CodeReview.html&version=latest)
+* [ServiceNow Product Documentation - Developer and deployment permissions](https://www.servicenow.com/docs/csh?topicname=developer-permissions.html&version=latest)
+* [ServiceNow Developer - What is Source Control](https://developer.servicenow.com/dev.do#!/learn/learning-plans/yokohama/new_to_servicenow/app_store_learnv2_devenvironment_yokohama_what_is_source_control)
+* [ServiceNow Product Documentation - Create a REST (Integration Hub) Data Source](https://www.servicenow.com/docs/csh?topicname=create-rest-type-data-source.html&version=latest)
+* [ServiceNow Product Documentation - ](aaa)
