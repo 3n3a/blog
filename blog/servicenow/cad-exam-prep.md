@@ -383,3 +383,4 @@ _``ng-if`` vs. ``ng-show``_
 * [ServiceNow - Data Encryption Whitepaper](https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/resource-center/white-paper/wp-data-encryption-with-servicenow.pdf)
 * [ServiceNow Product Documentation - Exploring Access Control List](https://www.servicenow.com/docs/bundle/vancouver-platform-security/page/administer/contextual-security/concept/exploring-access-control-list.html)
 * [ServiceNow Product Documentation - ACL rule types](https://www.servicenow.com/docs/bundle/xanadu-platform-security/page/administer/contextual-security/concept/acl-rule-types.html)
+* [ServiceNow Developer - Securing Applications against unauthorized access](https://developer.servicenow.com/dev.do#!/learn/learning-plans/xanadu/new_to_servicenow/app_store_learnv2_securingapps_xanadu_scripting_security)
