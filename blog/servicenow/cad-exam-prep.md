@@ -273,6 +273,15 @@ _Poplate record producer data and redirect users_
 
 ### Security and Restricting Access
 
+**Restrict access to applications and application modules**
+
+* Application Menu:
+  * Go to System Definition → Application Menus or Studio → Application Explorer → Navigation → Application Menus → [Your App].
+  * Click Edit roles and assign only the roles permitted to view the application. Users without those roles won’t see it  ￼.
+* Application Module:
+  * Navigate to System Definition → Modules or via Studio → Application Explorer → Navigation → Modules → [Module].
+  * In the Visibility (roles) field, add the roles that should have access. Users without those won’t see the module (
+
 ### Application Automation
 
 ### Working with External Data
