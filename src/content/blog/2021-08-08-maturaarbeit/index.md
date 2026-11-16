@@ -170,15 +170,15 @@ Einfacheitshalber werden nachfolgend nur die Server Honeypots
 beschrieben, da diese in der vorliegenden Arbeit ein Thema bilden
 werden. Auf die Client-seitigen Honeypots wird nicht eingegangen.
 
--   **Low-Interaction-Honeypots\
-    ** Diese Art von Honeypots wird gemäss Hoopes [^9] oft benutzt, um Virusproben zu sammeln. Dieser Honeypot
+-   **Low-Interaction-Honeypots**\
+    Diese Art von Honeypots wird gemäss Hoopes [^9] oft benutzt, um Virusproben zu sammeln. Dieser Honeypot
     ist einer, welcher der Sammlung von Viren dient, zugleich auch
     andere Verwendungendungsfälle hat. Die praktische Implementierung
     eines Low-Interaction-Honeypots ist einfach im Vergleich zu der von
     anderen Honeypots mit höheren Interaktivitäts-Graden.
 
--   **Mid-Interaction-Honeypots\
-    ** Medium-Interaction-Honeypots stellen nach
+-   **Mid-Interaction-Honeypots**\
+    Medium-Interaction-Honeypots stellen nach
     Lance [^10] mehr Möglichkeiten in
     Form von Interaktivität, zur Verfügung, als
     Low-Interaction-Honeypots. Diese Art von Honeypots werden
@@ -187,8 +187,8 @@ werden. Auf die Client-seitigen Honeypots wird nicht eingegangen.
     relativ kostengünstig sein soll. Das bedeutet konkret, dass ein
     solcher Honeypot fortlaufend betrieben wird.
 
--   **High-Interaction-Honeypots\
-    ** Ein High-Interaction-Honeypot ist im Grunde ein echtes System,
+-   **High-Interaction-Honeypots**\
+    Ein High-Interaction-Honeypot ist im Grunde ein echtes System,
     das sowohl in einer virtuellen als auch in einer physischen Umgebung
     ausgesetzt wird. Hier besteht die hohe Gefahr, dass ein Angriff auf
     wichtige Systeme erfolgt wie z.B. die Website eines Unternehmens.
@@ -446,22 +446,22 @@ Hilfe des Python-Moduls Plotly generiert. Wörterwolken-Visualisierungen
 werden nicht direkt mit dem Python-Skript generiert, da dies ein
 Javascript Modul ist.
 
--   **Loginversuche pro Tag\
-    ** Bei dieser Visualisierung werden von der Datenbank Informationen
+-   **Loginversuche pro Tag**\
+    Bei dieser Visualisierung werden von der Datenbank Informationen
     über die Anzahl Angriffe an einem gegebenen Tag eingeholt.
 
--   **Loginversuche sortiert nach Ländern\
-    ** Wichtig war es hier, dass nur die 10 Länder mit den meisten
+-   **Loginversuche sortiert nach Ländern**\
+    Wichtig war es hier, dass nur die 10 Länder mit den meisten
     Angriffen an das Frontend gesendet werden. Diest ist im
     Balkendiagramm in Abbildung 5 enhalten.
 
--   **Loginversuche ganze gemessene Zeit\
-    ** Dies ist die einfachste Visualisierung, denn diese besteht aus
+-   **Loginversuche ganze gemessene Zeit**\
+    Dies ist die einfachste Visualisierung, denn diese besteht aus
     einer Zahl. Auch hinter den Kulissen passiert nicht viel. Die
     Funktion zählt die Anzahl Login-Versuche und gibt diese zurück.
 
--   **Top 10 Benutzer, Passwort und Kombination\
-    ** Die Anmeldeinformationen, welche von einem Angreifer oder dessen
+-   **Top 10 Benutzer, Passwort und Kombination**\
+    Die Anmeldeinformationen, welche von einem Angreifer oder dessen
     Skript benutzt wurden, werden visualisiert. Die erste der drei
     Visualisierungen zeigt in Form von einer Wörterwolke, welches die
     meist ausprobierten Benutzernamen waren. Die zweite Visualisierung

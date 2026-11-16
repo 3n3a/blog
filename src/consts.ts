@@ -10,6 +10,5 @@ export const AUTHOR = {
 
 export const FOOTER_LINKS = [
 	{ label: 'Personal Website', href: 'https://3n3a.ch' },
-	{ label: 'Pinkness 10000', href: 'https://pink.enea.tech' },
 	{ label: 'GitHub', href: REPO_URL },
 ];

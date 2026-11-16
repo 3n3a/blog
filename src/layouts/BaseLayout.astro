@@ -75,6 +75,35 @@ const currentYear = new Date().getFullYear();
 		</div>
 		<script>
 			document.querySelector('.btt-btn')?.addEventListener('click', () => window.scrollTo(0, 0));
+
+			// Copy button on code blocks. The <pre> scrolls horizontally, so wrap it
+			// and pin the button to the wrapper instead of the scrolling element.
+			document.querySelectorAll<HTMLPreElement>('.rich-text-content pre').forEach((pre) => {
+				const wrapper = document.createElement('div');
+				wrapper.className = 'code-block';
+				pre.replaceWith(wrapper);
+				wrapper.append(pre);
+
+				const button = document.createElement('button');
+				button.type = 'button';
+				button.className = 'copy-btn';
+				button.textContent = 'Copy';
+				button.setAttribute('aria-label', 'Copy code to clipboard');
+				wrapper.append(button);
+
+				let timer: ReturnType<typeof setTimeout>;
+				button.addEventListener('click', async () => {
+					const code = pre.querySelector('code') ?? pre;
+					try {
+						await navigator.clipboard.writeText(code.innerText.replace(/\n$/, ''));
+						button.textContent = 'Copied!';
+					} catch {
+						button.textContent = 'Failed';
+					}
+					clearTimeout(timer);
+					timer = setTimeout(() => (button.textContent = 'Copy'), 2000);
+				});
+			});
 		</script>
 
 		<style>

@@ -186,6 +186,41 @@ kbd {
 	line-height: 1.5;
 }
 
+.rich-text-content .code-block {
+	position: relative;
+}
+
+.rich-text-content .code-block .copy-btn {
+	position: absolute;
+	top: 0.5em;
+	right: 0.5em;
+	padding: 0.2em 0.6em;
+	font-family: var(--mono-font-family);
+	font-size: 0.75em;
+	color: var(--color-text);
+	background: var(--card-bg);
+	border: 2px solid black;
+	border-radius: 0.3rem;
+	cursor: pointer;
+	opacity: 0;
+	transition: opacity 0.15s;
+}
+
+.rich-text-content .code-block:hover .copy-btn,
+.rich-text-content .code-block .copy-btn:focus-visible {
+	opacity: 1;
+}
+
+.rich-text-content .code-block .copy-btn:hover {
+	background: var(--card-border);
+}
+
+@media (hover: none) {
+	.rich-text-content .code-block .copy-btn {
+		opacity: 1;
+	}
+}
+
 .rich-text-content table {
 	display: block;
 	overflow-x: auto;
