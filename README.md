@@ -1,41 +1,51 @@
-# Website
+# 3n3a's Blog
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+Source of [blog.3n3a.ch](https://blog.3n3a.ch), built with [Astro](https://astro.build) (based on the official blog starter) and styled to match [3n3a.ch](https://3n3a.ch).
 
-### Installation
+## Development
 
-```
-$ yarn
-```
+Requires Node.js `>=22.23.4` (see `.tool-versions` / `.node-version`).
 
-### Local Development
-
-```
-$ yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```
-$ yarn build
+```sh
+npm install
+npm run dev       # dev server on http://localhost:4321 (drafts are visible here)
+npm run build     # static build into dist/
+npm run preview   # serve the build locally
+npm run check     # type-check .astro / .ts files
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+## Writing posts
 
-### Deployment
+Posts live in `src/content/blog/` as `.md` or `.mdx`. Images can sit next to the post and be referenced relatively (`./image.png`), or go in `public/img/`.
 
-Using SSH:
+```md
+---
+title: "My post"
+date: 2025-01-31 12:00
+draft: false            # drafts are excluded from the production build
+authors: enk
+tags: [tag-one, tag-two]
+slug: custom-url        # optional, defaults to the file path
+description: "..."      # optional, defaults to the text before <!--truncate-->
+---
 
+Intro shown on the index page.
+
+<!--truncate-->
+
+Rest of the post.
+
+:::warning
+Docusaurus-style admonitions (note, tip, info, warning, caution, danger) still work.
+:::
 ```
-$ USE_SSH=true yarn deploy
-```
 
-Not using SSH:
+The URL is the file path without extension (`servicenow/cad-exam-prep.md` → `/servicenow/cad-exam-prep`, `foo/index.md` → `/foo`), unless `slug` is set. This keeps the URLs from the old Docusaurus version.
 
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
+## Deployment (Cloudflare Pages)
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+- Build command: `npm run build`
+- Build output directory: `dist`
+- Node version comes from `.node-version` (or set `NODE_VERSION` in the Pages settings)
+
+`public/_redirects` maps the old Docusaurus `/atom.xml` feed to `/rss.xml`.

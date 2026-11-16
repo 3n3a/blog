@@ -1,0 +1,80 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import { editUrl, excerpt, getPosts, postSlug, readingTime, tagUrl, type Post } from '../lib/posts';
+
+export async function getStaticPaths() {
+	const posts = await getPosts();
+	return posts.map((post) => ({
+		params: { slug: postSlug(post) },
+		props: { post },
+	}));
+}
+
+interface Props {
+	post: Post;
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const { title, date, tags, draft } = post.data;
+---
+
+<BaseLayout title={title} description={excerpt(post)} type="article" wide>
+	<article>
+		<a class="back" href="/">&larr; All posts</a>
+		<header>
+			<h1>{title}</h1>
+			<p class="meta">
+				<FormattedDate date={date} /> · {readingTime(post)} min read
+				{draft && <strong> · DRAFT</strong>}
+			</p>
+			{
+				tags.length > 0 && (
+					<ul class="tag-list">
+						{tags.map((tag) => (
+							<li><a class="tag" href={tagUrl(tag)}>#{tag}</a></li>
+						))}
+					</ul>
+				)
+			}
+		</header>
+
+		<div class="rich-text-content">
+			<Content />
+		</div>
+
+		<p class="edit meta">
+			<a href={editUrl(post)}>Edit this page on GitHub</a>
+		</p>
+	</article>
+</BaseLayout>
+
+<style>
+	.back {
+		text-underline-offset: 4px;
+	}
+
+	header h1 {
+		margin: 0.5em 0 0.25em;
+		font-size: clamp(2rem, 2vw + 1.4rem, 3rem);
+	}
+
+	header .meta {
+		margin: 0;
+	}
+
+	header {
+		padding-bottom: 1em;
+		border-bottom: 3px dashed var(--card-border);
+	}
+
+	.edit {
+		margin-top: 3em;
+	}
+
+	.edit a {
+		text-underline-offset: 4px;
+	}
+</style>
