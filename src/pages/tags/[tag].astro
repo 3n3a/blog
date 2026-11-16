@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getPosts, tagSlug, type Post } from '../../lib/posts';
+
+export async function getStaticPaths() {
+	const posts = await getPosts();
+	const byTag = new Map<string, { label: string; posts: Post[] }>();
+	for (const post of posts) {
+		for (const tag of post.data.tags) {
+			const slug = tagSlug(tag);
+			const entry = byTag.get(slug) ?? { label: tag, posts: [] };
+			entry.posts.push(post);
+			byTag.set(slug, entry);
+		}
+	}
+	return [...byTag].map(([tag, { label, posts }]) => ({
+		params: { tag },
+		props: { label, posts },
+	}));
+}
+
+interface Props {
+	label: string;
+	posts: Post[];
+}
+
+const { label, posts } = Astro.props;
+---
+
+<BaseLayout title={`Posts tagged "${label}"`}>
+	<a class="back" href="/tags">&larr; All tags</a>
+	<h1 class="font-silkscreen">#{label}</h1>
+	<p class="meta">{posts.length} post{posts.length === 1 ? '' : 's'}</p>
+	<div class="list">
+		{posts.map((post) => <PostCard post={post} />)}
+	</div>
+</BaseLayout>
+
+<style>
+	h1 {
+		font-size: var(--font-size-lg-2);
+		margin-bottom: 0;
+	}
+
+	.back {
+		text-underline-offset: 4px;
+	}
+
+	.list {
+		display: grid;
+		gap: 1rem;
+		margin-top: 1.5rem;
+	}
+</style>

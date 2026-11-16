@@ -1,0 +1,132 @@
+---
+import '../styles/global.css';
+import { Font } from 'astro:assets';
+import { FOOTER_LINKS, SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+interface Props {
+	title?: string;
+	description?: string;
+	type?: 'website' | 'article';
+	wide?: boolean;
+}
+
+const { title, description = SITE_DESCRIPTION, type = 'website', wide = false } = Astro.props;
+const fullTitle = title ? `${title} | ${SITE_TITLE}` : SITE_TITLE;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const currentYear = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href={new URL('rss.xml', Astro.site)} />
+		<meta name="generator" content={Astro.generator} />
+		<Font cssVariable="--font-silkscreen" preload />
+		<!-- Inter, loaded the same way as on 3n3a.ch -->
+		<link rel="preconnect" href="https://rsms.me/" />
+		<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+		<link rel="canonical" href={canonicalURL} />
+		<title>{fullTitle}</title>
+		<meta name="description" content={description} />
+		<meta property="og:type" content={type} />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={fullTitle} />
+		<meta property="og:description" content={description} />
+		<meta property="og:site_name" content={SITE_TITLE} />
+	</head>
+
+	<body>
+		<header class:list={['site-header', { wide }]}>
+			<a class="brand" href="/">
+				<img src="/img/pink.png" alt="" width="32" height="32" />
+				<span class="font-silkscreen">{SITE_TITLE}</span>
+			</a>
+			<nav>
+				<a href="/tags">Tags</a>
+				<a href="/archive">Archive</a>
+				<a href="https://3n3a.ch">3n3a.ch</a>
+			</nav>
+		</header>
+
+		<main class:list={{ wide }}>
+			<slot />
+		</main>
+
+		<footer>
+			<ul class="footer-links">
+				{FOOTER_LINKS.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+				<li><a href="/rss.xml">RSS</a></li>
+			</ul>
+			<p>&copy; {currentYear} Enea &quot;3n3a&quot; Krähenbühl</p>
+		</footer>
+
+		<div class="floating-area">
+			<div class="floating-inner">
+				<button class="btt-btn" aria-label="Back to top">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"></path>
+					</svg>
+				</button>
+			</div>
+		</div>
+		<script>
+			document.querySelector('.btt-btn')?.addEventListener('click', () => window.scrollTo(0, 0));
+		</script>
+
+		<style>
+			.site-header {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: space-between;
+				gap: 0.5em 1em;
+				padding-top: 1.5em;
+			}
+
+			.brand {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.5em;
+				text-decoration: none;
+				font-size: var(--font-size-lg);
+			}
+
+			.brand img {
+				image-rendering: pixelated;
+			}
+
+			nav {
+				display: flex;
+				gap: 1em;
+			}
+
+			nav a,
+			.footer-links a {
+				text-underline-offset: 4px;
+			}
+
+			nav a:hover,
+			.footer-links a:hover {
+				text-decoration-color: var(--card-border);
+				text-decoration-thickness: 2px;
+			}
+
+			footer {
+				padding-top: 3em;
+				font-size: 0.9em;
+			}
+
+			.footer-links {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5em 1.25em;
+				padding: 0;
+				list-style: none;
+			}
+		</style>
+	</body>
+</html>

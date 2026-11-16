@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getPosts, tagSlug, tagUrl } from '../../lib/posts';
+
+const posts = await getPosts();
+const counts = new Map<string, { label: string; count: number }>();
+for (const post of posts) {
+	for (const tag of post.data.tags) {
+		const slug = tagSlug(tag);
+		const entry = counts.get(slug) ?? { label: tag, count: 0 };
+		entry.count++;
+		counts.set(slug, entry);
+	}
+}
+const tags = [...counts.values()].sort((a, b) => a.label.localeCompare(b.label));
+---
+
+<BaseLayout title="Tags">
+	<h1 class="font-silkscreen">Tags</h1>
+	<ul class="tag-list">
+		{
+			tags.map(({ label, count }) => (
+				<li>
+					<a class="tag" href={tagUrl(label)}>
+						#{label} <span class="count">{count}</span>
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</BaseLayout>
+
+<style>
+	h1 {
+		font-size: var(--font-size-lg-2);
+	}
+
+	.tag-list {
+		gap: 0.6em;
+	}
+
+	.tag {
+		font-size: 1em;
+	}
+
+	.count {
+		opacity: 0.6;
+		font-size: 0.85em;
+	}
+</style>
