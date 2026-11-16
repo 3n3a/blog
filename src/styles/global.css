@@ -157,6 +157,11 @@ kbd {
 	border: 3px solid black;
 }
 
+/* Diagrams are often transparent SVGs; give them a white backdrop. */
+.rich-text-content img[src$=".svg"] {
+	background: #fff;
+}
+
 .rich-text-content hr {
 	border: none;
 	border-top: 3px dashed var(--card-border);
